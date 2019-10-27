@@ -18,7 +18,7 @@ export default class InputField extends React.Component {
       focused: false,
       value: '',
       error: '',
-      label: 'Tap here to decribe what you worked on',
+      label: '',
       predicted: '',
       onChange: () => ''
     };
@@ -30,7 +30,7 @@ export default class InputField extends React.Component {
         focused: (props.locked && props.focused) || false,
         value: props.value || '',
         error: props.error || '',
-        label: props.label || 'Label',
+        label: props.label || '',
         background: '#DFECFA'
       };
     };
@@ -59,5 +59,6 @@ render() {
             onBlur={ () => !locked && this.setState({ focused: false})}
             />
         </div>
+        
     )};
 }; 
