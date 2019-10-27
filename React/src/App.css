@@ -30,15 +30,16 @@ body {
   user-select: none;
   -webkit-touch-callout: none;
   touch-callout: none;
-  background-color: #444;
+  background-color: #dfecfa;
 }
 
 .app {
   text-align: center;
   margin: 0 auto;
-  max-width: 576px;
+  max-width: 2048px;
+  max-height: 2732;
   position: relative;
-  background-color: #FFFFFF;
+  background-color: #dfecfa;
 }
 
 .app h1 {
@@ -127,8 +128,13 @@ body {
   animation-delay: 0.5s;
 }
 
+.button {
+  background-color: white;
+  border-radius: 12;
+}
+
 .content-area {
-  padding: 18px;
+  padding: 40px;
   text-align: left;
 }
 
@@ -186,6 +192,20 @@ body {
 
 .bottom-toolbar ul > *.selected svg path {
   fill: #FFFFFF;
+}
+
+.top-appbar {
+  height: 90px;
+  position: top;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #084387;
 }
 
 @media screen and (max-width: 576px) {

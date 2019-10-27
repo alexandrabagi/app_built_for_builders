@@ -10,9 +10,10 @@ import { Collections } from './data/Collections';
 
 import { GridScreen } from './screens/GridScreen';
 import { AboutScreen } from './screens/AboutScreen';
-import { CategoryScreen } from './screens/CategoryScreen';
+import CategoryScreen from './screens/HourRegistration';
 
 import { TabbedBar } from './components/TabbedBar';
+import { AppBar } from './components/AppBar';
 
 import './App.css';
 
@@ -32,7 +33,7 @@ class App extends Component {
       {id: 'AwnggmGaFms', selected: false, filters: []},
       {id: '9jsV5uKbAEM', selected: false, filters: []},
       {id: '3cNc1U7nJcs', selected: false, filters: []}
-    ]
+    ],
   }
 
   toggleImageSelect = (id) => {
@@ -78,8 +79,8 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <AppBar />
         <Router>
-          <h1>{this.state.title}</h1>
           <Switch>
             <Route exact path="/" render={() => {
               return (
