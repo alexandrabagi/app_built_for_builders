@@ -27,12 +27,12 @@ class App extends Component {
     title: 'ProtaBuild',
     currentCategory: 'oneColor',
     images: [
-      {id: 'metal', selected: false, filters: []},
-      {id: 'pipe', selected: false, filters: []},
-      {id: 'roof', selected: false, filters: []},
-      {id: 'screws', selected: false, filters: []},
-      {id: 'tool', selected: false, filters: []},
-      {id: 'insulation', selected: false, filters: []}
+      {id: 'Constructions', selected: false, filters: []},
+      {id: 'Pipes', selected: false, filters: []},
+      {id: 'Roofing', selected: false, filters: []},
+      {id: 'Screws', selected: false, filters: []},
+      {id: 'Tools', selected: false, filters: []},
+      {id: 'Insulation', selected: false, filters: []}
     ]
   }
 
@@ -78,7 +78,7 @@ class App extends Component {
     return (
       <div className="app">
         <Router>
-          <h1>{this.state.title}</h1>
+          <h1 >{this.state.title}</h1>
           <Switch>
             <Route exact path="/" render={() => {
               return (
