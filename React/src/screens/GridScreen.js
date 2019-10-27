@@ -19,10 +19,10 @@ export const GridScreen = props => (
         })
       }
     </div>
-    <div className="image-filters blocks-container">
+    {/* <div  className="image-filters blocks-container">
       <FlipFilterButton onClick={() => props.handleFilterButtonClicked(FlipFilter)} />
       <CircleCropFilterButton onClick={() => props.handleFilterButtonClicked(CircleCropFilter)} />
       <ColourShiftFilterButton onClick={() => props.handleFilterButtonClicked(ColourShiftFilter)} />
-    </div>
+    </div> */}
   </React.Fragment>
 );
