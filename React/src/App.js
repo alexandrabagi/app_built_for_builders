@@ -11,6 +11,7 @@ import { Collections } from './data/Collections';
 import { GridScreen } from './screens/GridScreen';
 import { AboutScreen } from './screens/AboutScreen';
 import { CategoryScreen } from './screens/CategoryScreen';
+import ProducGridScreen from  './screens/Products';
 
 import { TabbedBar } from './components/TabbedBar';
 
@@ -26,21 +27,19 @@ class App extends Component {
     title: 'ProtaBuild',
     currentCategory: 'oneColor',
     images: [
-      {id: '_C5zsV_p-YI', selected: false, filters: []},
-      {id: '58WRkqcAn9o', selected: false, filters: []},
-      {id: '9z-veIxii6k', selected: false, filters: []},
-      {id: 'AwnggmGaFms', selected: false, filters: []},
-      {id: '9jsV5uKbAEM', selected: false, filters: []},
-      {id: '3cNc1U7nJcs', selected: false, filters: []}
+      {id: 'metal', selected: false, filters: []},
+      {id: 'pipe', selected: false, filters: []},
+      {id: 'roof', selected: false, filters: []},
+      {id: 'screws', selected: false, filters: []},
+      {id: 'tool', selected: false, filters: []},
+      {id: 'insulation', selected: false, filters: []}
     ]
   }
 
   toggleImageSelect = (id) => {
-    this.setState({subtitle: 'image selected: ' + id});
     let imagesToUpdate = [...this.state.images];
     let imageToUpdate = imagesToUpdate.find(image => image.id === id);
-    imageToUpdate.selected = !imageToUpdate.selected;
-    this.setState({images: imagesToUpdate});
+    window.location = './products/'+ imageToUpdate.id;
   }
 
   setCategory = category => {
@@ -99,6 +98,7 @@ class App extends Component {
               )
             }} />
             <Route path="/about" component={AboutScreen} />
+            <Route path="/products/:categoryId/" component={ProducGridScreen} />
           </Switch>
           <TabbedBar />
         </Router>

@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 import { faTh, faStream, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GridIcon from '../images/pipe.jpg';
+import OrderIcon from '../images/pipe.jpg';
+import TimeIcon from '../images/pipe.jpg';
 
 export const TabbedBar = () => (
   <div className="bottom-toolbar">
