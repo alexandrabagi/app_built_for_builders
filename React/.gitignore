@@ -5,9 +5,7 @@
 /node_modules
 /.pnp
 .pnp.js
-../../.vscode
-../.vscode
-/.vscode
+
 .vscode
 # testing
 /coverage
@@ -19,7 +17,7 @@
 .DS_Store
 .env.local
 .env.development.local
-.env.test.local
+.env.test.loca
 .env.production.local
 
 npm-debug.log*
