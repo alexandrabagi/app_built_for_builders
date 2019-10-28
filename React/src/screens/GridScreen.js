@@ -19,7 +19,11 @@ export const GridScreen = props => (
         })
       }
     </div>
+<<<<<<< HEAD
     {/* <div  className="image-filters blocks-container">
+=======
+    {/*<div className="image-filters blocks-container">
+>>>>>>> alexandra_hour_reg
       <FlipFilterButton onClick={() => props.handleFilterButtonClicked(FlipFilter)} />
       <CircleCropFilterButton onClick={() => props.handleFilterButtonClicked(CircleCropFilter)} />
       <ColourShiftFilterButton onClick={() => props.handleFilterButtonClicked(ColourShiftFilter)} />
