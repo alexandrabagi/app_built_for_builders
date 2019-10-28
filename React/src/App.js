@@ -10,13 +10,8 @@ import { Collections } from './data/Collections';
 
 import { GridScreen } from './screens/GridScreen';
 import { AboutScreen } from './screens/AboutScreen';
-<<<<<<< HEAD
-import { CategoryScreen } from './screens/CategoryScreen';
-import ProducGridScreen from  './screens/Products';
-=======
 import HourRegistrationScreen from './screens/HourRegistration';
 import ProductScreen from  './screens/Products';
->>>>>>> alexandra_hour_reg
 
 import { TabbedBar } from './components/TabbedBar';
 import { AppBar } from './components/AppBar';
@@ -39,11 +34,7 @@ class App extends Component {
       {id: 'Screws', selected: false, filters: []},
       {id: 'Tools', selected: false, filters: []},
       {id: 'Insulation', selected: false, filters: []}
-<<<<<<< HEAD
-    ]
-=======
     ],
->>>>>>> alexandra_hour_reg
   }
 
   toggleImageSelect = (id) => {
@@ -89,10 +80,6 @@ class App extends Component {
       <div className="app">
         <AppBar />
         <Router>
-<<<<<<< HEAD
-          <h1 >{this.state.title}</h1>
-=======
->>>>>>> alexandra_hour_reg
           <Switch>
             <Route exact path="/category" render={() => {
               return (
@@ -111,13 +98,8 @@ class App extends Component {
                 />
               )
             }} />
-<<<<<<< HEAD
-            <Route path="/about" component={AboutScreen} />
-            <Route path="/products/:categoryId/" component={ProducGridScreen} />
-=======
             <Route path="/list" component={AboutScreen} />
             <Route path="/products/:categoryId/" component={ProductScreen} />
->>>>>>> alexandra_hour_reg
           </Switch>
           <TabbedBar />
         </Router>

@@ -1,10 +1,6 @@
 import React from 'react';
 
-<<<<<<< HEAD
-class ProducGridScreen extends React.Component {
-=======
 class ProductScreen extends React.Component {
->>>>>>> alexandra_hour_reg
 
     categoryId = this.props.match.params.categoryId
     
@@ -18,8 +14,4 @@ class ProductScreen extends React.Component {
     }
 };
 
-<<<<<<< HEAD
-export default ProducGridScreen;
-=======
 export default ProductScreen;
->>>>>>> alexandra_hour_reg

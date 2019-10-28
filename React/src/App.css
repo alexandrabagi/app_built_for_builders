@@ -80,11 +80,7 @@ body {
   display: block;
   width: 180px;
   height: 180px;
-<<<<<<< HEAD
-  margin: 18px 0 18px 0;
-=======
   margin: 20px;
->>>>>>> alexandra_hour_reg
   opacity: 0;
   position: relative;
   transition: transform 0.5s;
@@ -96,30 +92,7 @@ body {
   z-index: 1;
 }
 
-<<<<<<< HEAD
-/* .blocks-container img {
-  animation-name: fade-in;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  object-fit: cover;
-} */
-
-.blocks-container img {
-  width: 150px;
-  height: 150px;
-} 
-
-.app h3 {
-  margin-bottom: 10 ;
-  background-color: #08468E;
-  color: #FFFFFF; 
-}
-
-.blocks-container div {
-=======
 /*.blocks-container img {
->>>>>>> alexandra_hour_reg
   animation-name: fade-in;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -127,17 +100,10 @@ body {
   object-fit: cover;
 }*/
 
-<<<<<<< HEAD
-
-.blocks-container .image-filter {
-  background-color: #EEEEEE;
-}
-=======
 .blocks-container img {
   width: 200px;
   height: 200px;
 } 
->>>>>>> alexandra_hour_reg
 
 .blocks-container div {
   width: 100%;
@@ -196,11 +162,7 @@ body {
 }
 
 .bottom-toolbar ul > * {
-<<<<<<< HEAD
-  background-color: #08468E ;
-=======
   background-color: #084387;
->>>>>>> alexandra_hour_reg
   flex: 1;
   height: 100%;
   display: flex;
@@ -209,18 +171,6 @@ body {
 }
 
 .bottom-toolbar ul > * svg path {
-<<<<<<< HEAD
-  fill: #ECECEC;
-}
-
-.bottom-toolbar ul > *.selected {
-  background-color: #ECECEC;
-}
-
-.bottom-toolbar ul > *.selected svg path {
-  fill: #08468E
-  ;
-=======
   fill: #dfecfa;
 }
 
@@ -244,7 +194,6 @@ body {
   display: flex;
   align-items: center;
   background-color: #084387;
->>>>>>> alexandra_hour_reg
 }
 
 @media screen and (max-width: 576px) {
