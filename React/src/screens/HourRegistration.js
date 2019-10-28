@@ -7,7 +7,7 @@ import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
 
 
 // export const CategoryScreen = props => {
-export default class CategoryScreen extends React.Component {  
+export default class HourRegistrationScreen extends React.Component {  
   //const category = props.selectedCategory;
   render() {
     const textStyle = {

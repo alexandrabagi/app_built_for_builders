@@ -1,12 +1,14 @@
 import React from 'react';
-import Brick from './brick.jpg';
 
 export const ImageThumbnail = props => (
-  <img
+  <div>
+    <img
     key={props.image.id}
     style={Object.assign({}, ...props.image.filters)}
     className={props.image.selected ? 'selected' : ''} 
-    src={Brick} 
+    src={require('../images/'+ props.image.id+'.jpg')}
     alt="brick"
     onClick={props.onClick} />
+    <h3>{props.image.id}</h3>
+  </div>
 );

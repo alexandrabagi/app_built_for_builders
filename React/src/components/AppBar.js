@@ -2,6 +2,6 @@ import React from 'react'
 
 export const AppBar = () => (
     <div className="top-appbar">
-        <div>Project Name</div>
+        <div>Prota Build</div>
     </div>
 );
