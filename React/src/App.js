@@ -10,9 +10,11 @@ import { Collections } from './data/Collections';
 
 import { GridScreen } from './screens/GridScreen';
 import { AboutScreen } from './screens/AboutScreen';
-import { CategoryScreen } from './screens/CategoryScreen';
+import HourRegistrationScreen from './screens/HourRegistration';
+import ProductScreen from  './screens/Products';
 
 import { TabbedBar } from './components/TabbedBar';
+import { AppBar } from './components/AppBar';
 
 import './App.css';
 
@@ -26,21 +28,19 @@ class App extends Component {
     title: 'ProtaBuild',
     currentCategory: 'oneColor',
     images: [
-      {id: '_C5zsV_p-YI', selected: false, filters: []},
-      {id: '58WRkqcAn9o', selected: false, filters: []},
-      {id: '9z-veIxii6k', selected: false, filters: []},
-      {id: 'AwnggmGaFms', selected: false, filters: []},
-      {id: '9jsV5uKbAEM', selected: false, filters: []},
-      {id: '3cNc1U7nJcs', selected: false, filters: []}
-    ]
+      {id: 'Constructions', selected: false, filters: []},
+      {id: 'Pipes', selected: false, filters: []},
+      {id: 'Roofing', selected: false, filters: []},
+      {id: 'Screws', selected: false, filters: []},
+      {id: 'Tools', selected: false, filters: []},
+      {id: 'Insulation', selected: false, filters: []}
+    ],
   }
 
   toggleImageSelect = (id) => {
-    this.setState({subtitle: 'image selected: ' + id});
     let imagesToUpdate = [...this.state.images];
     let imageToUpdate = imagesToUpdate.find(image => image.id === id);
-    imageToUpdate.selected = !imageToUpdate.selected;
-    this.setState({images: imagesToUpdate});
+    window.location = './products/'+ imageToUpdate.id;
   }
 
   setCategory = category => {
@@ -78,10 +78,10 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <AppBar />
         <Router>
-          <h1>{this.state.title}</h1>
           <Switch>
-            <Route exact path="/" render={() => {
+            <Route exact path="/category" render={() => {
               return (
                 <GridScreen
                   images={this.state.images}
@@ -90,15 +90,16 @@ class App extends Component {
                 />
               )
             }} />
-            <Route path="/category" render={() => { 
+            <Route path="/hours" render={() => { 
               return ( 
-                <CategoryScreen 
+                <HourRegistrationScreen 
                   selectedCategory={this.state.currentCategory}
                   onCategorySelect={this.setCategory}
                 />
               )
             }} />
-            <Route path="/about" component={AboutScreen} />
+            <Route path="/list" component={AboutScreen} />
+            <Route path="/products/:categoryId/" component={ProductScreen} />
           </Switch>
           <TabbedBar />
         </Router>

@@ -30,21 +30,35 @@ body {
   user-select: none;
   -webkit-touch-callout: none;
   touch-callout: none;
-  background-color: #444;
+  background-color: #dfecfa;
 }
 
+/* iPad Pro resolution: 2732x2048*/
 .app {
   text-align: center;
   margin: 0 auto;
-  max-width: 576px;
+  max-width: 2048px;
+  max-height: 2732px;
   position: relative;
-  background-color: #FFFFFF;
+  background-color: #dfecfa;
 }
 
 .app h1 {
   padding: 0.67em 0;
-  margin: 0;
+  margin-bottom: 10 ;
+  background-color: #08468E;
+  color: #FFFFFF; 
 }
+
+.app h3 {
+  background-color: #084387;
+  color: #FFFFFF; 
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
 
 .app p {
   line-height: 1.5em;
@@ -53,15 +67,20 @@ body {
 
 .blocks-container {
   display: flex;
+  height: max-content;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-align: center;
+  background-color: white;
+  margin: 40px 60px 0px 60px;
+  border-radius: 10px;
 }
 
-.blocks-container > * {
+.blocks-container > * { /*image container*/
   display: block;
   width: 180px;
   height: 180px;
-  margin: 0 0 18px 0;
+  margin: 20px;
   opacity: 0;
   position: relative;
   transition: transform 0.5s;
@@ -73,63 +92,38 @@ body {
   z-index: 1;
 }
 
-.blocks-container img {
+/*.blocks-container img {
   animation-name: fade-in;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   object-fit: cover;
-}
+}*/
 
-.blocks-container .image-filter {
-  background-color: #EEEEEE;
-}
+.blocks-container img {
+  width: 200px;
+  height: 200px;
+} 
 
-.blocks-container .image-filter {
-  position: relative;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  outline: none;
-  cursor: pointer;
-  animation-name: move-up-and-fade-in;
+.blocks-container div {
+  width: 100%;
+  animation-name: fade-in;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  object-fit: cover;
+  padding: 20px;
+  margin-bottom: 150px;
 }
 
-.blocks-container .image-filter > svg {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.blocks-container > *:nth-child(n+1) {
-  animation-delay: 0s;
-}
-
-.blocks-container > *:nth-child(n+2) {
-  animation-delay: 0.1s;
-}
-
-.blocks-container > *:nth-child(n+3) {
-  animation-delay: 0.2s;
-}
-
-.blocks-container > *:nth-child(n+4) {
-  animation-delay: 0.3s;
-}
-
-.blocks-container > *:nth-child(n+5) {
-  animation-delay: 0.4s;
-}
-
-.blocks-container > *:nth-child(n+6) {
-  animation-delay: 0.5s;
+.button {
+  background-color: white;
+  border-radius: 12;
 }
 
 .content-area {
-  padding: 18px;
-  text-align: left;
+  padding: 40px;
+  text-align: center;
 }
 
 .content-area button {
@@ -143,7 +137,7 @@ body {
 }
 
 .content-area button.selected {
-  background-color: #FF1A6B;
+  background-color: rgba(8, 71, 142, 0.849);
   color: #FFFFFF;
 }
 
@@ -168,7 +162,7 @@ body {
 }
 
 .bottom-toolbar ul > * {
-  background-color: #ECECEC;
+  background-color: #084387;
   flex: 1;
   height: 100%;
   display: flex;
@@ -177,15 +171,29 @@ body {
 }
 
 .bottom-toolbar ul > * svg path {
-  fill: #444444;
+  fill: #dfecfa;
 }
 
 .bottom-toolbar ul > *.selected {
-  background-color: #48577D;
+  background-color: #dfecfa;
 }
 
 .bottom-toolbar ul > *.selected svg path {
-  fill: #FFFFFF;
+  fill: #084387;
+}
+
+.top-appbar {
+  height: 90px;
+  position: top;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #084387;
 }
 
 @media screen and (max-width: 576px) {
