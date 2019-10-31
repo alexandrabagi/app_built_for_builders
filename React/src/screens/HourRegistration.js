@@ -2,8 +2,8 @@ import React from 'react';
 import InputField from '../components/InputField'
 import Button from './../components/Button'
 
-import Clock from './../images/clock.PNG'
-import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
+import Clock from './../images/Clock.PNG'
+// import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
 
 
 // export const CategoryScreen = props => {

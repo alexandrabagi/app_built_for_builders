@@ -6,12 +6,12 @@ import {
   Switch
 } from 'react-router-dom';
 
-import { Collections } from './data/Collections';
+// import { Collections } from './data/Collections';
 
-import { GridScreen } from './screens/GridScreen';
-import { AboutScreen } from './screens/AboutScreen';
+import { MaterialGridScreen } from './screens/MaterialGridScreen';
+import { OrderedScreen } from './screens/OrderedScreen';
 import HourRegistrationScreen from './screens/HourRegistration';
-import ProductScreen from  './screens/Products';
+import ProductGridScreen from  './screens/ProductsGridScreen';
 
 import { TabbedBar } from './components/TabbedBar';
 import { AppBar } from './components/AppBar';
@@ -43,14 +43,14 @@ class App extends Component {
     window.location = './products/'+ imageToUpdate.id;
   }
 
-  setCategory = category => {
+  /*setCategory = category => {
     if (Collections[category]) {
       const images = Collections[category].map(id => {
         return {id, selected: false, filters: []};
       });
       this.setState({images})
     }
-  }
+  }*/
 
   applyFilterToSelectedImages = filter => {
     
@@ -83,7 +83,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/category" render={() => {
               return (
-                <GridScreen
+                <MaterialGridScreen
                   images={this.state.images}
                   toggleImageSelect={this.toggleImageSelect}
                   handleFilterButtonClicked={this.applyFilterToSelectedImages}
@@ -94,12 +94,12 @@ class App extends Component {
               return ( 
                 <HourRegistrationScreen 
                   selectedCategory={this.state.currentCategory}
-                  onCategorySelect={this.setCategory}
+                  //onCategorySelect={this.setCategory}
                 />
               )
             }} />
-            <Route path="/list" component={AboutScreen} />
-            <Route path="/products/:categoryId/" component={ProductScreen} />
+            <Route path="/list" component={OrderedScreen} />
+            <Route path="/products/:categoryId/" component={ProductGridScreen} />
           </Switch>
           <TabbedBar />
         </Router>
