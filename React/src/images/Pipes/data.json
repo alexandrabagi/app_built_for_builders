@@ -1,0 +1,13 @@
+{
+    "images": [
+        {"id": "Pipes/p1", "name": "test"},
+        {"id": "Pipes/p2", "name": "test"},
+        {"id": "Pipes/p3", "name": "test"},
+        {"id": "Pipes/p4", "name": "test"},
+        {"id": "Pipes/p5", "name": "test"},
+        {"id": "Pipes/p6", "name": "test"},
+        {"id": "Pipes/p7", "name": "test"},
+        {"id": "Pipes/p8", "name": "test"},
+        {"id": "Pipes/p9", "name": "test"}
+      ]
+  }

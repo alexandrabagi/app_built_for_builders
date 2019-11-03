@@ -1,17 +1,14 @@
 import React from 'react';
 
-import { ImageThumbnail } from '../components/ImageThumbnail';
+import { ImageGridScreen } from '../components/ImageGridScreen';
 
 export const MaterialGridScreen = props => (
   <React.Fragment>
-    <div className="sample-images blocks-container">
-      {
-        props.images.map(image => {
-          return <ImageThumbnail 
-            image={image} 
-            onClick={() => props.toggleImageSelect(image.id)} />;
-        })
-      }
+    <div >
+      <ImageGridScreen
+                  images={props.images}
+                  toggleImageSelect={props.toggleImageSelect}
+                />
     </div>
   </React.Fragment>
 );

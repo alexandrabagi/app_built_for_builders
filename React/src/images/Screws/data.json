@@ -1,0 +1,13 @@
+{
+    "images": [
+        {"id": "Screws/s1", "name": "test"},
+        {"id": "Screws/s2", "name": "test"},
+        {"id": "Screws/s3", "name": "test"},
+        {"id": "Screws/s4", "name": "test"},
+        {"id": "Screws/s5", "name": "test"},
+        {"id": "Screws/s6", "name": "test"},
+        {"id": "Screws/s7", "name": "test"},
+        {"id": "Screws/s8", "name": "test"},
+        {"id": "Screws/s9", "name": "test"}
+      ]
+  }
