@@ -1,5 +1,7 @@
 {
     "images": [
-        {"id": "Pipes/one", "name": "test"}
+        {"id": "Roofing/r1", "name": "Regular"},
+        {"id": "Roofing/r2", "name": "Regular"},
+        {"id": "Roofing/r3", "name": "Regular"}
       ]
   }
