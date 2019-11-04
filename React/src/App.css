@@ -240,6 +240,15 @@ body {
   border-radius: 10px;
 }
 
+.modal > .dropdown {
+  width: 70%;
+  position: center;
+  font-size: 28px;
+  margin: 20px;
+  border: 1px solid #898989;
+  padding: 5px;
+}
+
 @media screen and (max-width: 576px) {
 
   body, html {
