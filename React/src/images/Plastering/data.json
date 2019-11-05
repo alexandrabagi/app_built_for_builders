@@ -1,8 +1,13 @@
 {
     "images": [
         {"id": "Plastering/p1", "name": "Type a"},
+<<<<<<< HEAD
         {"id": "Plastering/p2", "name": "Type b"},
         {"id": "Plastering/p3", "name": "Type c"}
+=======
+        {"id": "Plastering/p2", "name": "Type a"},
+        {"id": "Plastering/p3", "name": "Type a"}
+>>>>>>> db15bfa132eb65403e0f7d65cf65e6122b9f3cf1
         
       ]
   }
