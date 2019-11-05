@@ -1,6 +1,7 @@
 import React from 'react';
 import InputField from '../components/InputField'
 import Button from './../components/Button'
+import Content from '../components/Content'
 import Popup from "reactjs-popup";
 
 
@@ -8,7 +9,7 @@ import Clock from './../images/Clock.PNG'
 // import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
 
 // export const CategoryScreen = props => {
-export default class HourRegistrationScreen extends React.Component {  
+export default class HourRegistrationScreen extends React.Component {
   //const category = props.selectedCategory;
 
   constructor(props) {
@@ -29,11 +30,11 @@ export default class HourRegistrationScreen extends React.Component {
     }
 }
 
-togglePopup() {  
-  this.setState({  
-       showPopup: !this.state.showPopup  
-  });  
-}  
+togglePopup() {
+  this.setState({
+       showPopup: !this.state.showPopup
+  });
+}
 
 changeButtonState (id, index) {
   let buttonState = []
@@ -58,26 +59,29 @@ changeButtonState (id, index) {
         <div>
           <div style={textStyle}>Who are you registering?</div>
           <div className='row'>
-            
-            {this.state.buttonsRow1.map((button, index) => {
-              return(
 
-                <Button id = {button.id} label={button.label} selected={button.selected} onClick={()=>{
-                    this.changeButtonState(button.id, index)
-                    if(button.id === 2) this.togglePopup.bind()
-                  }
-                  }/>    
-              )
-            })}
-        </div>  
-        {this.state.showPopup ?  
-          <Popup  
-          text='Click "Close Button" to hide popup'  
-          closePopup={this.togglePopup.bind(this)}  
+            <Button id = {this.state.buttonsRow1[0].id} label={this.state.buttonsRow1[0].label} selected={this.state.buttonsRow1[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
+
+            <Popup modal trigger={
+              <button className="button-unselected">{this.state.buttonsRow1[1].label}</button>}>
+                {close => <Content close={close} /> }
+            </Popup>
+
+            <Popup modal trigger={
+              <button className="button-unselected" >{this.state.buttonsRow1[2].label}</button>}>
+                {(close) => <Content close={close} />}
+            </Popup>
+
+
+        </div>
+        {this.state.showPopup ?
+          <Popup
+          text='Click "Close Button" to hide popup'
+          closePopup={this.togglePopup.bind(this)}
           />
-            
-        : null  
-        }     
+
+        : null
+        }
         </div>
 
         <div>
@@ -89,24 +93,22 @@ changeButtonState (id, index) {
               )
             })}
           </div>
-            
+
 
       </div>
-      
-      <InputField 
+
+      <InputField
         label="Tap here to describe what you worked on." />
       <div style={textStyle}>How long did you work on this task?</div>
       <div className="img container">
         <img src={Clock} alt="clock"/>
 
-        
+
 
       </div>
-      
+
     </div>
-  
+
 
   )};
 };
-
-

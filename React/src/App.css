@@ -47,12 +47,12 @@ body {
   padding: 0.67em 0;
   margin-bottom: 10 ;
   background-color: #08468E;
-  color: #FFFFFF; 
+  color: #FFFFFF;
 }
 
 .app h3 {
   background-color: #084387;
-  color: #FFFFFF; 
+  color: #FFFFFF;
   font-size: 20px;
   padding: 10px;
   width: 200px;
@@ -103,7 +103,7 @@ body {
 .blocks-container img {
   width: 200px;
   height: 200px;
-} 
+}
 
 .blocks-container div {
   width: 100%;
@@ -129,16 +129,23 @@ body {
 .content-area button {
   width: 100%;
   height: 56px;
-  background-color: #EEEEEE;
+  background: white;
+  color: #898989;
   border: none;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 18px 0;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 20px;
 }
 
 .content-area button.selected {
-  background-color: rgba(8, 71, 142, 0.849);
-  color: #FFFFFF;
+  background-color: white;
+  color: #084387;
+  margin: 20;
+  border-radius: 10;
+  font-size: 28px;
+  font-weight: bold;
+  border: 4px solid #084387;
 }
 
 .bottom-toolbar {
@@ -149,7 +156,7 @@ body {
   right: 0;
 }
 
-.bottom-toolbar nav, 
+.bottom-toolbar nav,
 .bottom-toolbar ul {
   margin: 0;
   padding: 0;
@@ -194,6 +201,51 @@ body {
   display: flex;
   align-items: center;
   background-color: #084387;
+}
+
+.modal {
+  font-size: 12px;
+  height: 800px;
+  position: center;
+}
+
+.modal > .header {
+  background-color: #084387;
+  color: white;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  margin: auto;
+}
+.modal > .actions {
+  width: 50%;
+  padding: 10px 5px;
+  text-align: center;
+}
+.modal > .close {
+  background-color: #084387;
+  color: white;
+  font-weight: bold;
+  width: 15%;
+  padding: 2px 5px;
+  line-height: 20px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.modal > .dropdown {
+  position: center;
+  font-size: 28px;
+  margin: 20px;
+  border: 1px solid #898989;
+  padding: 5px;
 }
 
 @media screen and (max-width: 576px) {
