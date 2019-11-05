@@ -6,8 +6,6 @@ import {
   Switch
 } from 'react-router-dom';
 
-// import { Collections } from './data/Collections';
-
 import { MaterialGridScreen } from './screens/MaterialGridScreen';
 import { OrderedScreen } from './screens/OrderedScreen';
 import HourRegistrationScreen from './screens/HourRegistration';
@@ -19,11 +17,6 @@ import { AppBar } from './components/AppBar';
 import './App.css';
 
 class App extends Component {
-
-  constructor() {
-    super();
-  }
-
  
     state = {
     title: 'ProtaBuild',
@@ -41,14 +34,11 @@ class App extends Component {
     ]
   }
 
-
   toggleImageSelect = (id) => {
     let imagesToUpdate = [...this.state.images];
     let imageToUpdate = imagesToUpdate.find(image => image.id === id);
     window.location = './products/'+ imageToUpdate.id;
   }
-
-
 
   render() {
     return (
@@ -60,16 +50,14 @@ class App extends Component {
               return ( 
                 <HourRegistrationScreen 
                   selectedCategory={this.state.currentCategory}
-                  //onCategorySelect={this.setCategory}
                 />
               )
             }} />
-             <Route exact path="/category" render={() => {
+             <Route path="/category" render={() => {
               return (
                 <MaterialGridScreen
                   images={this.state.images}
-                  toggleImageSelect={this.toggleImageSelect}
-                  
+                  toggleImageSelect={this.toggleImageSelect} 
                 />
               )
             }} />

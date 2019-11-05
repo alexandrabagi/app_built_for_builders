@@ -4,13 +4,9 @@ import Button from './../components/Button'
 import Content from '../components/Content'
 import Popup from "reactjs-popup";
 
-
 import Clock from './../images/Clock.PNG'
-// import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
 
-// export const CategoryScreen = props => {
 export default class HourRegistrationScreen extends React.Component {
-  //const category = props.selectedCategory;
 
   constructor(props) {
     super(props);
@@ -71,18 +67,8 @@ changeButtonState (id, index) {
               <button className="button-unselected" >{this.state.buttonsRow1[2].label}</button>}>
                 {(close) => <Content close={close} />}
             </Popup>
-
-
-        </div>
-        {this.state.showPopup ?
-          <Popup
-          text='Click "Close Button" to hide popup'
-          closePopup={this.togglePopup.bind(this)}
-          />
-
-        : null
-        }
-        </div>
+        </div>  
+      </div>
 
         <div>
           <div style={textStyle}>Which day are you registering for?</div>
@@ -102,13 +88,8 @@ changeButtonState (id, index) {
       <div style={textStyle}>How long did you work on this task?</div>
       <div className="img container">
         <img src={Clock} alt="clock"/>
-
-
-
       </div>
 
     </div>
-
-
   )};
 };
