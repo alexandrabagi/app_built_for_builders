@@ -29,7 +29,8 @@ class App extends Component {
       {id: 'Constructions', name: 'Constructions'},
       {id: 'Roofing', name: 'Roofing'},
       {id: 'Tools', name: 'Tools'},
-      {id: 'Rigips', name: 'Rigips'}
+      {id: 'Rigips', name: 'Rigips'},
+      {id: 'Plastering', name: 'Plastering'}
       
     ]
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from 'react-dropdown'
+import Dropdown from 'react-dropdown';
 
 const options = [
     'Anders, Robert', 'Kazmierczak, Leo', 'Muller, Frank', 'Nielsen, Mikkel', 'Sandberg, Rudi'
