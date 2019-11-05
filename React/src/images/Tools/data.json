@@ -1,7 +1,7 @@
 {
     "images": [
-        {"id": "Tools/t1", "name": "Hammer"},
-        {"id": "Tools/t1", "name": "Tool"},
-        {"id": "Tools/t1", "name": "Tool"}
+        {"id": "Tools/t1", "name": "type a"},
+        {"id": "Tools/t1", "name": "type b"},
+        {"id": "Tools/t1", "name": "type c"}
       ]
   }

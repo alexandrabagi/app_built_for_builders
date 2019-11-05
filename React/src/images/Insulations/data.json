@@ -1,7 +1,7 @@
 {
     "images": [
-        {"id": "Insulations/i1", "name": "regular"},
-        {"id": "Insulations/i2", "name": "regular"},
-        {"id": "Insulations/i3", "name": "regular"}
+        {"id": "Insulations/i1", "name": "type a"},
+        {"id": "Insulations/i2", "name": "type b"},
+        {"id": "Insulations/i3", "name": "type c"}
       ]
   }

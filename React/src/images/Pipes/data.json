@@ -1,13 +1,13 @@
 {
     "images": [
-        {"id": "Pipes/p1", "name": "test"},
-        {"id": "Pipes/p2", "name": "test"},
-        {"id": "Pipes/p3", "name": "test"},
-        {"id": "Pipes/p4", "name": "test"},
-        {"id": "Pipes/p5", "name": "test"},
-        {"id": "Pipes/p6", "name": "test"},
-        {"id": "Pipes/p7", "name": "test"},
-        {"id": "Pipes/p8", "name": "test"},
-        {"id": "Pipes/p9", "name": "test"}
+        {"id": "Pipes/p1", "name": "type a"},
+        {"id": "Pipes/p2", "name": "type b"},
+        {"id": "Pipes/p3", "name": "type c"},
+        {"id": "Pipes/p4", "name": "type d"},
+        {"id": "Pipes/p5", "name": "type e"},
+        {"id": "Pipes/p6", "name": "type f"},
+        {"id": "Pipes/p7", "name": "type g"},
+        {"id": "Pipes/p8", "name": "type h"},
+        {"id": "Pipes/p9", "name": "type i"}
       ]
   }
