@@ -10,6 +10,7 @@ class ProductGridScreen extends React.Component {
     toggleImageSelect = (id) => {
       //Empty until we know what to do when we click on a specific product.
       //ImageGridScreen component require the toggleImageSelect method to not be null
+      //Will be changed later.
     }
 
 
