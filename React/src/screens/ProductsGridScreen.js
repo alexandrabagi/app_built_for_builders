@@ -8,9 +8,8 @@ class ProductGridScreen extends React.Component {
     categoryId = this.props.match.params.categoryId
     data = require('../images/'+this.categoryId + '/data.json');
     toggleImageSelect = (id) => {
-      // let imagesToUpdate = [...this.state.images];
-      // let imageToUpdate = imagesToUpdate.find(image => image.id === id);
-      // window.location = './products/'+ imageToUpdate.id;
+      //Empty until we know what to do when we click on a specific product.
+      //ImageGridScreen component require the toggleImageSelect method to not be null
     }
 
 
