@@ -58,8 +58,9 @@ changeButtonState (id, index) {
 
             <Button id = {this.state.buttonsRow1[0].id} label={this.state.buttonsRow1[0].label} selected={this.state.buttonsRow1[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
 
-            <Popup modal trigger={
-              <button className="button-unselected">{this.state.buttonsRow1[1].label}</button>}>
+            <Popup modal trigger={ open => (
+              <button className="button-unselected">{this.state.buttonsRow1[1].label}</button>)}
+              >
                 {close => <Content close={close} /> }
             </Popup>
 
@@ -88,7 +89,8 @@ changeButtonState (id, index) {
       <div style={textStyle}>How long did you work on this task?</div>
       <div className="img container">
         <img src={Clock} alt="clock"/>
-      </div>
+          </div>
+       <button className="save">Save</button>
 
     </div>
   )};

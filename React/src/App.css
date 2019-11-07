@@ -148,6 +148,18 @@ body {
   border: 4px solid #084387;
 }
 
+.content-area button.save {
+  width: fit-content;
+  background-color: #084387;
+  color: white;
+  margin: 20;
+  padding-left: 40;
+  padding-right: 40;
+  border-radius: 10;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .bottom-toolbar {
   height: 90px;
   position: absolute;
