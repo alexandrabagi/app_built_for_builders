@@ -1,23 +1,58 @@
 import React from 'react';
-import Popup from 'reactjs-popup'
 
 import InputField from '../components/InputField'
-import Button from '../components/Button'
+import Button from './../components/Button'
 import Content from '../components/Content'
+import Modal from '../components/Modal'
 
-// import '../HourRegistration.css'
+import Popup from "reactjs-popup";
 
 import Clock from './../images/Clock.PNG'
 
-export default class HourRegistrationScreen extends React.Component {  
-  
-  state = { showPopup : false };
-  
-  togglePopup() {
-    this.setState({
-      showPopup: !this.state.showPopup
-    });
+export default class HourRegistrationScreen extends React.Component {
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+        selectedButton: null,
+        buttonsRow1: [
+          {id: 0, label: "Me", selected: false},
+          {id: 1,label: "Coworker", selected: false, onClick : () => {}},
+          {id: 2,label: "Both", selected: false}
+        ],
+        buttonsRow2: [
+          {id: 3, label: "Today", selected: false},
+          {id: 4, label: "Yesterday", selected: false},
+          {id: 5, label: "Other", selected: false}
+        ],
+        showModal: false,
+    }
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
+
+openModal() {
+  this.setState({
+       showModal: true
+  });
+}
+
+closeModal() {
+  this.setState({
+       showModal: false
+  });
+}
+
+changeButtonState (id, index) {
+  let buttonState = []
+  if(id<=2) buttonState = this.state.buttonsRow1
+  if(id>2) buttonState = this.state.buttonsRow2
+  buttonState.map((button) => button.selected = false)
+  buttonState[index].selected = !buttonState[index].selected
+  this.setState(buttonState)
+}
+
 
   render() {
     const textStyle = {
@@ -25,37 +60,70 @@ export default class HourRegistrationScreen extends React.Component {
       color: 'rgba(8, 67, 135, 0.8)',
       padding: '20px'
     };
+
     return (
+      
       <div className="content-area">
         <div>
           <div style={textStyle}>Who are you registering?</div>
           <div className='row'>
-            <Button className="buttonStyle" label="Me" />
-            <Popup modal trigger={
-              <button className="button-unselected">Coworker</button>}>              
-                {close => <Content close={close} />}
-            </Popup>
-            <Button className="buttonStyle" label="Both" />
-          </div>
-        </div>
 
-        <div>
-          <div style={textStyle}>Which day are you registering for?</div>
-          <div className='row'>
-          <Button label="Today" />
-          <Button label="Yesterday" />
-          <Button label="Other" />
-          </div>
+            <Button id = {this.state.buttonsRow1[0].id} label={this.state.buttonsRow1[0].label} selected={this.state.buttonsRow1[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
+
+            {/*<Popup modal trigger={ open => (
+              <Button 
+                id = {this.state.buttonsRow1[1].id}
+                label={this.state.buttonsRow1[1].label}
+                selected={this.state.buttonsRow1[1].selected}
+                onClick={this.clickLog}
+              />)}
+              >
+
+                { close => <Content close={close} /> }
+            </Popup> */}
+
+            <Button 
+              id={this.state.buttonsRow1[1].id} 
+              label={this.state.buttonsRow1[1].label} 
+              selected={this.state.buttonsRow1[1].selected} 
+              onClick={this.openModal}/>
+            <Modal 
+              show={this.state.showModal}
+              onClose={this.closeModal}
+              animation={false} />
+
+            <Popup modal trigger={
+              <button className="button-unselected">{this.state.buttonsRow1[2].label}</button>}>
+                {(close) => <Content close={close} />}
+            </Popup>
+        </div>  
       </div>
 
-      <InputField 
+      <div>
+        <div style={textStyle}>Which day are you registering for?</div>
+        <div className='row'>
+          {this.state.buttonsRow2.map((button, index) => {
+              return(
+                <Button id = {button.id} label={button.label} selected={button.selected} onClick={()=> this.changeButtonState(button.id, index)}/>
+              )
+            })}
+        </div>
+      </div>
+
+      <div>
+      <InputField
         label="Tap here to describe what you worked on." />
+      </div>
+      
+      
       <div style={textStyle}>How long did you work on this task?</div>
       <div className="img container">
         <img src={Clock} alt="clock"/>
-      </div>
+          </div>
+       <button 
+        className="save"
+        onClick={this.clickLog}>Save</button>
+
     </div>
   )};
 };
-
-

@@ -1,0 +1,7 @@
+{
+    "images": [
+        {"id": "Constructions/c1", "name": "regular"},
+        {"id": "Constructions/c2", "name": "regular"},
+        {"id": "Constructions/c3", "name": "regular"}
+      ]
+  }

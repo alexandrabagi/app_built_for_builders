@@ -1,0 +1,13 @@
+{
+    "images": [
+        {"id": "Bricks/b1", "name": "Regular"},
+        {"id": "Bricks/b2", "name": "Regular"},
+        {"id": "Bricks/b3", "name": "Regular"},
+        {"id": "Bricks/b4", "name": "Regular"},
+        {"id": "Bricks/b5", "name": "Regular"},
+        {"id": "Bricks/b6", "name": "Regular"},
+        {"id": "Bricks/b7", "name": "Regular"},
+        {"id": "Bricks/b8", "name": "Regular"},
+        {"id": "Bricks/b9", "name": "Regular"}
+      ]
+  }

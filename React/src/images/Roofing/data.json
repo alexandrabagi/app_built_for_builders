@@ -1,0 +1,7 @@
+{
+    "images": [
+        {"id": "Roofing/r1", "name": "type a"},
+        {"id": "Roofing/r2", "name": "type b"},
+        {"id": "Roofing/r3", "name": "type c"}
+      ]
+  }

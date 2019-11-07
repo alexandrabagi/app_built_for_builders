@@ -47,12 +47,12 @@ body {
   padding: 0.67em 0;
   margin-bottom: 10 ;
   background-color: #08468E;
-  color: #FFFFFF; 
+  color: #FFFFFF;
 }
 
 .app h3 {
   background-color: #084387;
-  color: #FFFFFF; 
+  color: #FFFFFF;
   font-size: 20px;
   padding: 10px;
   width: 200px;
@@ -103,7 +103,7 @@ body {
 .blocks-container img {
   width: 200px;
   height: 200px;
-} 
+}
 
 .blocks-container div {
   width: 100%;
@@ -148,6 +148,18 @@ body {
   border: 4px solid #084387;
 }
 
+.content-area button.save {
+  width: fit-content;
+  background-color: #084387;
+  color: white;
+  margin: 20;
+  padding-left: 40;
+  padding-right: 40;
+  border-radius: 10;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .bottom-toolbar {
   height: 90px;
   position: absolute;
@@ -156,7 +168,7 @@ body {
   right: 0;
 }
 
-.bottom-toolbar nav, 
+.bottom-toolbar nav,
 .bottom-toolbar ul {
   margin: 0;
   padding: 0;
@@ -204,16 +216,20 @@ body {
 }
 
 .modal {
-  font-size: 12px;
+  font-size: 28px;
   height: 800px;
   position: center;
 }
 
 .modal > .header {
   background-color: #084387;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   color: white;
   width: 100%;
-  font-size: 28px;
+  font-size: 34px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: bold;
   text-align: center;
 }
@@ -241,13 +257,64 @@ body {
 }
 
 .modal > .dropdown {
-  width: 70%;
+  margin: 20px;
   position: center;
   font-size: 28px;
-  margin: 20px;
+  margin: 50px 50px 10px;
   border: 1px solid #898989;
-  padding: 5px;
+  padding: 10px;
 }
+
+.row {
+  display:flex; 
+  flex-direction:row;
+}
+
+.field {
+  display: flex;
+  height: 300px;
+  border-radius: 10px;
+  margin: 20;
+  background-color: rgba(255,255,255,1);
+}
+
+.field input {
+  width: 100%;
+  height: 100px;
+  padding: 0px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
+ 
+  color: #868686;
+  outline: none;
+}
+
+.field input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+img {
+  align-self: center;
+}
+
+.img container {
+  display: flex;
+  margin: 20;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+div {
+  flex: 1;
+  justify-content: center;
+}
+
+
+
 
 @media screen and (max-width: 576px) {
 
@@ -265,28 +332,5 @@ body {
     width: 31vw;
     height: 31vw;
     margin-bottom: 3.5vw;
-  }
-
-  .popup {
-    position: fixed;
-    width: 100%;  
-    height: 100%;  
-    top: 0;  
-    left: 0;  
-    right: 0;  
-    bottom: 0;  
-    margin: auto;  
-    background-color: #dfecfa; 
-  }
-
-  .popup_inner {  
-    position: absolute;  
-    left: 25%;  
-    right: 25%;  
-    top: 25%;  
-    bottom: 25%;  
-    margin: auto;  
-    border-radius: 10px;  
-    background: white;  
   }
 }

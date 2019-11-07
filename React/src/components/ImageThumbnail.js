@@ -5,11 +5,10 @@ export const ImageThumbnail = props => (
 
     <img
     key={props.image.id}
-    style={Object.assign({}, ...props.image.filters)}
-    className={props.image.selected ? 'selected' : ''} 
+    className=''
     src={require('../images/'+ props.image.id+'.jpg')}
     alt="brick"
     onClick={props.onClick} />
-    <h3>{props.image.id}</h3>
+    <h3>{props.image.name}</h3>
   </div>
 );
