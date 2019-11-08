@@ -8,6 +8,7 @@ import Modal from '../components/Modal'
 import Popup from "reactjs-popup";
 
 import Clock from './../images/Clock.PNG'
+import CalendarModal from '../components/CalendarModal';
 
 export default class HourRegistrationScreen extends React.Component {
 
@@ -27,6 +28,7 @@ export default class HourRegistrationScreen extends React.Component {
           {id: 5, label: "Other", selected: false}
         ],
         showModal: false,
+        showCalendarModal: false,
         coworker: 'Coworker'
     }
     this.openModal = this.openModal.bind(this)
@@ -44,9 +46,21 @@ export default class HourRegistrationScreen extends React.Component {
     });
   }
 
+  openCalendarModal() {
+    this.setState({
+      showCalendarModal: true
+    })
+  }
+
   closeModal() {
     this.setState({
         showModal: false
+    });
+  }
+
+  closeCalendarModal() {
+    this.setState({
+        showCalendarModal: false
     });
   }
 
@@ -108,11 +122,25 @@ export default class HourRegistrationScreen extends React.Component {
       <div>
         <div style={textStyle}>Which day are you registering for?</div>
         <div className='row'>
-          {this.state.buttonsRow2.map((button, index) => {
+          {/*{this.state.buttonsRow2.map((button, index) => {
               return(
                 <Button id = {button.id} label={button.label} selected={button.selected} onClick={()=> this.changeButtonState(button.id, index)}/>
               )
-            })}
+            })} */}
+          <Button id = {this.state.buttonsRow2[2].id} label={this.state.buttonsRow2[0].label} selected={this.state.buttonsRow2[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow2[0].id, 0)}/>  
+          <Button id = {this.state.buttonsRow2[1].id} label={this.state.buttonsRow2[1].label} selected={this.state.buttonsRow2[1].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow2[1].id, 1)}/>
+          <Button 
+            id = {this.state.buttonsRow2[2].id} 
+            label={this.state.buttonsRow2[2].label} 
+            selected={this.state.buttonsRow2[2].selected} 
+            onClick={()=> {
+              this.openCalendarModal()
+              this.changeButtonState(this.state.buttonsRow2[2].id, 2)
+            }}/>
+          <CalendarModal
+            show={this.state.showCalendarModal}
+            onClose={this.closeCalendarModal}
+            animation={false} />    
         </div>
       </div>
 
