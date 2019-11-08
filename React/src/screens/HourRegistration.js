@@ -86,7 +86,10 @@ changeButtonState (id, index) {
               id={this.state.buttonsRow1[1].id} 
               label={this.state.buttonsRow1[1].label} 
               selected={this.state.buttonsRow1[1].selected} 
-              onClick={this.openModal}/>
+              onClick={() => {
+                this.openModal()
+                this.changeButtonState(this.state.buttonsRow1[1].id, 1)
+              }}/>
             <Modal 
               show={this.state.showModal}
               onClose={this.closeModal}
