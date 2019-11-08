@@ -89,10 +89,19 @@ export default class HourRegistrationScreen extends React.Component {
               animation={false} 
               selectedCoworkerM={this.getCoworker}/>
 
-            <Popup modal trigger={
-              <button className="button-unselected">{this.state.buttonsRow1[2].label}</button>}>
-                {(close) => <Content close={close} />}
-            </Popup>
+            <Button 
+              id={this.state.buttonsRow1[2].id} 
+              label={this.state.buttonsRow1[2].label} 
+              selected={this.state.buttonsRow1[2].selected} 
+              onClick={() => {
+                this.openModal()
+                this.changeButtonState(this.state.buttonsRow1[2].id, 2)
+              }}/>
+            <Modal 
+              show={this.state.showModal}
+              onClose={this.closeModal}
+              animation={false} 
+              selectedCoworkerM={this.getCoworker}/>
         </div>  
       </div>
 
