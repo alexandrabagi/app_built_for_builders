@@ -3,10 +3,21 @@ import PropTypes from 'prop-types';
 import DropdownMenu from './Dropdown'
 
 class Modal extends React.Component {
+  
+  state = { 
+    selectedCoworker: ''
+  }
+
+  handleCoworker = (name) => {
+    this.setState({ selectedCoworker: name })
+    console.log('Value from Modal: ' + name)
+    this.props.selectedCoworkerM(name)
+  }
+  
   render() {
     // Render nothing if the "show" prop is false
     if(!this.props.show) {
-      return null; // do nothing when show is false
+      return null;
     }
 
     // The gray background
@@ -37,11 +48,12 @@ class Modal extends React.Component {
                 <div>Choose Coworker</div>
             </div>
             <div className="dropdown">
-                <DropdownMenu />
+                <DropdownMenu 
+                  selectedCoworker={this.handleCoworker}/>
             </div>
             <button 
                 className="close"
-                onClick={this.props.onClose}>
+                onClick={() => { this.props.onClose() }}>
                 Save
             </button>
         </div>
@@ -53,7 +65,8 @@ class Modal extends React.Component {
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  onSelectCoworker: PropTypes.func,
 };
 
 export default Modal;

@@ -27,32 +27,37 @@ export default class HourRegistrationScreen extends React.Component {
           {id: 5, label: "Other", selected: false}
         ],
         showModal: false,
+        coworker: 'Coworker'
     }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
   }
 
-openModal() {
-  this.setState({
-       showModal: true
-  });
-}
+  getCoworker = (coworkerName) => {
+    console.log('Value from HourReg: ' + coworkerName)
+    this.setState({ coworker: coworkerName })
+  }
 
-closeModal() {
-  this.setState({
-       showModal: false
-  });
-}
+  openModal() {
+    this.setState({
+        showModal: true
+    });
+  }
 
-changeButtonState (id, index) {
-  let buttonState = []
-  if(id<=2) buttonState = this.state.buttonsRow1
-  if(id>2) buttonState = this.state.buttonsRow2
-  buttonState.map((button) => button.selected = false)
-  buttonState[index].selected = !buttonState[index].selected
-  this.setState(buttonState)
-}
+  closeModal() {
+    this.setState({
+        showModal: false
+    });
+  }
 
+  changeButtonState (id, index) {
+    let buttonState = []
+    if(id<=2) buttonState = this.state.buttonsRow1
+    if(id>2) buttonState = this.state.buttonsRow2
+    buttonState.map((button) => button.selected = false)
+    buttonState[index].selected = !buttonState[index].selected
+    this.setState(buttonState)
+  }
 
   render() {
     const textStyle = {
@@ -70,21 +75,9 @@ changeButtonState (id, index) {
 
             <Button id = {this.state.buttonsRow1[0].id} label={this.state.buttonsRow1[0].label} selected={this.state.buttonsRow1[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
 
-            {/*<Popup modal trigger={ open => (
-              <Button 
-                id = {this.state.buttonsRow1[1].id}
-                label={this.state.buttonsRow1[1].label}
-                selected={this.state.buttonsRow1[1].selected}
-                onClick={this.clickLog}
-              />)}
-              >
-
-                { close => <Content close={close} /> }
-            </Popup> */}
-
             <Button 
               id={this.state.buttonsRow1[1].id} 
-              label={this.state.buttonsRow1[1].label} 
+              label={this.state.coworker} 
               selected={this.state.buttonsRow1[1].selected} 
               onClick={() => {
                 this.openModal()
@@ -93,7 +86,8 @@ changeButtonState (id, index) {
             <Modal 
               show={this.state.showModal}
               onClose={this.closeModal}
-              animation={false} />
+              animation={false} 
+              selectedCoworkerM={this.getCoworker}/>
 
             <Popup modal trigger={
               <button className="button-unselected">{this.state.buttonsRow1[2].label}</button>}>
