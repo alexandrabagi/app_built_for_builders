@@ -33,6 +33,8 @@ export default class HourRegistrationScreen extends React.Component {
     }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
+    this.openCalendarModal = this.openCalendarModal.bind(this)
+    this.closeCalendarModal = this.closeCalendarModal.bind(this)
   }
 
   getCoworker = (coworkerName) => {

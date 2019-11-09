@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Calendar from './Calendar'
+
 class CalendarModal extends React.Component {
 
     render() {
@@ -36,7 +38,7 @@ class CalendarModal extends React.Component {
                 <div className="header">
                     <div>Choose a date</div>
                 </div>
-                
+                <Calendar />
                 <button 
                     className="close"
                     onClick={() => { this.props.onClose() }}>
