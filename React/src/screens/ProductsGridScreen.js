@@ -25,6 +25,7 @@ class ProductGridScreen extends React.Component {
          <ImageGridScreen
                   images={this.data.images}
                   toggleImageSelect = {this.toggleImageSelect}
+                  showButtons = {true}
                 />
         
         </div>

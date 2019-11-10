@@ -9,7 +9,10 @@ export const ImageGridScreen = props => (
         props.images.map(image => {
           return <ImageThumbnail 
             image={image} 
-            onClick={() => props.toggleImageSelect(image.id)} />;
+            onClick={() => props.toggleImageSelect(image.id)} 
+            showButtons={props.showButtons} 
+            />;
+            
         })
       }
     </div>
