@@ -1,4 +1,6 @@
 import React from 'react';
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ImageThumbnail = props => (
   <div>
@@ -11,9 +13,9 @@ export const ImageThumbnail = props => (
     <table className={props.showButtons ? 'buttons-show' : 'buttons-hidden'}  >
     <tbody>
       <tr>
-        <th> <button onClick={props.IncrementCountClick} >Add</button></th>
-        <th> <label >{props.item.count}</label></th>
-        <th>  <button onClick={props.DecreaseCountClick}>Remove</button></th>
+        <th> <button className='button-add-remove' onClick={props.IncrementCountClick} >  <FontAwesomeIcon icon={faPlus} size="2x" /></button></th>
+        <th> <label className='label-count'>{props.item.count}</label></th>
+        <th>  <button className='button-add-remove' onClick={props.DecreaseCountClick}><FontAwesomeIcon icon={faMinus} size="2x" /></button></th>
       </tr>
       </tbody>
     </table>

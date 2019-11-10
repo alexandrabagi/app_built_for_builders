@@ -1,7 +1,7 @@
 {
     "products": [
-        {"id": 1,"image": "Roofing/r1", "name": "type a", "count": 1},
-        {"id": 2,"image": "Roofing/r2", "name": "type b", "count": 3},
-        {"id": 3,"image": "Roofing/r3", "name": "type c", "count": 6}
+        {"id": 1,"image": "Roofing/r1", "name": "type a", "count": 0},
+        {"id": 2,"image": "Roofing/r2", "name": "type b", "count": 0},
+        {"id": 3,"image": "Roofing/r3", "name": "type c", "count": 0}
       ]
   }
