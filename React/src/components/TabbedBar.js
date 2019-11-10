@@ -13,7 +13,7 @@ export const TabbedBar = () => (
             <FontAwesomeIcon icon={faClock} size="2x" />
           </li>
         </NavLink>
-        <NavLink exact to="/category" activeClassName="selected">
+        <NavLink exact to="/materials" activeClassName="selected">
           <li className="selected">
             <FontAwesomeIcon icon={faTh} size="2x" />
           </li>

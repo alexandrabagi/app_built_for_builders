@@ -6,7 +6,7 @@ export const MaterialGridScreen = props => (
   <React.Fragment>
     <div >
       <ImageGridScreen
-                  images={props.images}
+                  items={props.materials}
                   toggleImageSelect={props.toggleImageSelect}
                   showButtons = {false}
                 />

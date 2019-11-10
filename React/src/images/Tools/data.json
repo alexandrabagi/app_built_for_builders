@@ -1,7 +1,7 @@
 {
-    "images": [
-        {"id": "Tools/t1", "name": "type a"},
-        {"id": "Tools/t1", "name": "type b"},
-        {"id": "Tools/t1", "name": "type c"}
+    "products": [
+        {"id": 1,"image": "Tools/t1", "name": "type a"},
+        {"id": 1,"image": "Tools/t1", "name": "type b"},
+        {"id": 1,"image": "Tools/t1", "name": "type c"}
       ]
   }
