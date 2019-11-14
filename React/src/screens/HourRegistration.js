@@ -29,7 +29,8 @@ export default class HourRegistrationScreen extends React.Component {
         ],
         showModal: false,
         showCalendarModal: false,
-        coworker: 'Coworker'
+        coworker: 'Coworker',
+        calendarDate: 'Other'
     }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
@@ -40,6 +41,11 @@ export default class HourRegistrationScreen extends React.Component {
   getCoworker = (coworkerName) => {
     console.log('Value from HourReg: ' + coworkerName)
     this.setState({ coworker: coworkerName })
+  }
+
+  getDate = (calendarDate) => {
+    console.log('Value from CalendarModal: ' + calendarDate)
+    this.setState({ calendarDate: calendarDate })
   }
 
   openModal() {
@@ -89,7 +95,11 @@ export default class HourRegistrationScreen extends React.Component {
           <div style={textStyle}>Who are you registering?</div>
           <div className='row'>
 
-            <Button id = {this.state.buttonsRow1[0].id} label={this.state.buttonsRow1[0].label} selected={this.state.buttonsRow1[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
+            <Button 
+              id = {this.state.buttonsRow1[0].id} 
+              label={this.state.buttonsRow1[0].label} 
+              selected={this.state.buttonsRow1[0].selected} 
+              onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
 
             <Button 
               id={this.state.buttonsRow1[1].id} 
@@ -106,18 +116,10 @@ export default class HourRegistrationScreen extends React.Component {
               selectedCoworkerM={this.getCoworker}/>
 
             <Button 
-              id={this.state.buttonsRow1[2].id} 
+              id = {this.state.buttonsRow1[2].id} 
               label={this.state.buttonsRow1[2].label} 
               selected={this.state.buttonsRow1[2].selected} 
-              onClick={() => {
-                this.openModal()
-                this.changeButtonState(this.state.buttonsRow1[2].id, 2)
-              }}/>
-            <Modal 
-              show={this.state.showModal}
-              onClose={this.closeModal}
-              animation={false} 
-              selectedCoworkerM={this.getCoworker}/>
+              onClick={()=> this.changeButtonState(this.state.buttonsRow1[2].id, 2)}/>
         </div>  
       </div>
 
@@ -133,7 +135,7 @@ export default class HourRegistrationScreen extends React.Component {
           <Button id = {this.state.buttonsRow2[1].id} label={this.state.buttonsRow2[1].label} selected={this.state.buttonsRow2[1].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow2[1].id, 1)}/>
           <Button 
             id = {this.state.buttonsRow2[2].id} 
-            label={this.state.buttonsRow2[2].label} 
+            label={this.state.calendarDate} 
             selected={this.state.buttonsRow2[2].selected} 
             onClick={()=> {
               this.openCalendarModal()
@@ -142,7 +144,8 @@ export default class HourRegistrationScreen extends React.Component {
           <CalendarModal
             show={this.state.showCalendarModal}
             onClose={this.closeCalendarModal}
-            animation={false} />    
+            animation={false} 
+            chosenDate={this.getDate}/>    
         </div>
       </div>
 
@@ -157,7 +160,7 @@ export default class HourRegistrationScreen extends React.Component {
         <img src={Clock} alt="clock"/>
           </div>
        <button 
-        className="save"
+        className="hr-button-save"
         onClick={this.clickLog}>Save</button>
 
     </div>

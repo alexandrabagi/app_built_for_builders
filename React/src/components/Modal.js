@@ -36,7 +36,7 @@ class Modal extends React.Component {
       backgroundColor: 'white',
       borderRadius: 10,
       maxWidth: 700,
-      maxHeight: 500,
+      maxHeight: 800,
       margin: '100 auto 0 auto',
     };
 
@@ -52,7 +52,7 @@ class Modal extends React.Component {
                   selectedCoworker={this.handleCoworker}/>
             </div>
             <button 
-                className="close"
+                className="hr-button-save"
                 onClick={() => { this.props.onClose() }}>
                 Save
             </button>

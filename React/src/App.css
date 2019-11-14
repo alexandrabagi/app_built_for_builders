@@ -20,6 +20,12 @@
   }
 }
 
+abbr {
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
 html, body, .app, #root {
   width: 100%;
   height: 100%;
@@ -29,7 +35,6 @@ body {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
-  touch-callout: none;
   background-color: #dfecfa;
 }
 
@@ -102,17 +107,17 @@ body {
   margin-bottom: 150px;
 }
 
-.button {
+/*.button {
   background-color: white;
   border-radius: 12;
-}
+}*/
 
 .content-area {
   padding: 40px;
   text-align: center;
 }
 
-.content-area button {
+.hr-button {
   width: 100%;
   height: 56px;
   background: white;
@@ -124,24 +129,26 @@ body {
   margin: 20px;
 }
 
-.content-area button.selected {
+.hr-button-selected {
+  width: 100%;
+  height: 56px;
   background-color: white;
   color: #084387;
-  margin: 20;
-  border-radius: 10;
+  margin: 20px;
+  border-radius: 10px;
   font-size: 28px;
   font-weight: bold;
   border: 4px solid #084387;
 }
 
-.content-area button.save {
-  width: fit-content;
+.hr-button-save {
+  height: 56px;
   background-color: #084387;
   color: white;
-  margin: 20;
-  padding-left: 40;
-  padding-right: 40;
-  border-radius: 10;
+  margin: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
   font-size: 28px;
   font-weight: bold;
 }
@@ -203,7 +210,7 @@ body {
 
 .modal {
   font-size: 28px;
-  height: 800px;
+  max-height: 800px !important;
   position: center;
 }
 
@@ -231,16 +238,7 @@ body {
   padding: 10px 5px;
   text-align: center;
 }
-.modal > .close {
-  background-color: #084387;
-  color: white;
-  font-weight: bold;
-  width: 15%;
-  padding: 2px 5px;
-  line-height: 20px;
-  font-size: 24px;
-  border-radius: 10px;
-}
+
 
 .modal > .dropdown {
   margin: 20px;
@@ -298,6 +296,49 @@ div {
   flex: 1;
   justify-content: center;
 }
+
+.react-calendar {
+  border: white;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 20px;
+}
+
+.react-calendar__month-view__days__day {
+  line-height: 30px;
+  
+}
+
+.react-calendar__month-view__weekdays {
+  font-size: 28px;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  margin-top: 20px;
+}
+
+.react-calendar__navigation__label {
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 30px;
+}
+
+.react-calendar__tile--active {
+  background: #084387 !important;
+  border-radius: 20px;
+  padding: 0px;
+}
+
 
 @media screen and (max-width: 576px) {
 
