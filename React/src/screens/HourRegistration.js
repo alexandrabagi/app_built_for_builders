@@ -36,6 +36,7 @@ export default class HourRegistrationScreen extends React.Component {
     this.closeModal = this.closeModal.bind(this)
     this.openCalendarModal = this.openCalendarModal.bind(this)
     this.closeCalendarModal = this.closeCalendarModal.bind(this)
+    this.clearAll = this.clearAll.bind(this)
   }
 
   getCoworker = (coworkerName) => {
@@ -79,6 +80,26 @@ export default class HourRegistrationScreen extends React.Component {
     buttonState.map((button) => button.selected = false)
     buttonState[index].selected = !buttonState[index].selected
     this.setState(buttonState)
+  }
+
+  clearAll() {
+    this.setState({
+      selectedButton: null,
+        buttonsRow1: [
+          {id: 0, label: "Me", selected: false},
+          {id: 1,label: "Coworker", selected: false, onClick : () => {}},
+          {id: 2,label: "Both", selected: false}
+        ],
+        buttonsRow2: [
+          {id: 3, label: "Today", selected: false},
+          {id: 4, label: "Yesterday", selected: false},
+          {id: 5, label: "Other", selected: false}
+        ],
+      showModal: false,
+      showCalendarModal: false,
+      coworker: 'Coworker',
+      calendarDate: 'Other'
+    })
   }
 
   render() {
@@ -161,7 +182,7 @@ export default class HourRegistrationScreen extends React.Component {
           </div>
        <button 
         className="hr-button-save"
-        onClick={this.clickLog}>Save</button>
+        onClick={this.clearAll}>Save</button>
 
     </div>
   )};
