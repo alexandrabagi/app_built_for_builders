@@ -1,0 +1,7 @@
+{
+    "products": [
+        {"id": 1,"image": "Insulations/i1", "name": "type a", "count": 0},
+        {"id": 1,"image": "Insulations/i2", "name": "type b", "count": 0},
+        {"id": 1,"image": "Insulations/i3", "name": "type c", "count": 0}
+      ]
+  }
