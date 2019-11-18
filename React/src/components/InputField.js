@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../src/style.css'
 
 export default class InputField extends React.Component {
     static propTypes = {
@@ -45,18 +44,16 @@ export default class InputField extends React.Component {
 render() {
         const { focused, value, error, label } = this.state;
         const { id, type, locked } = this.props;
-        const fieldClassName = `field ${(locked ? focused : focused || value) && 'focused'} ${locked && !focused && 'locked'}`;
+        const fieldClassName = `field ${(locked ? focused : focused || value) && 'focused'} ${locked && !focused && 'locked'}`; //check
         
     return(
-        <div className={fieldClassName}>
+        <div className="field input">
             <input
             id={id}
             type="text"
             value={value}
             placeholder={label}
             onChange={this.onChange}
-            onFocus={ () => !locked && this.setState({ focused: true })}
-            onBlur={ () => !locked && this.setState({ focused: false})}
             />
         </div>
         

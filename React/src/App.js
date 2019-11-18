@@ -37,7 +37,6 @@ class App extends Component {
       {id:9, image: 'Plastering', name: 'Plastering'}
       
     ]
-    
   }
 
   toggleImageSelect = (id) => {
