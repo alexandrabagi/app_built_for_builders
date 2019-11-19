@@ -2,13 +2,10 @@ import React from 'react';
 
 import InputField from '../components/InputField'
 import Button from './../components/Button'
-import Content from '../components/Content'
 import Modal from '../components/Modal'
-
-import Popup from "reactjs-popup";
-
-import Clock from './../images/Clock.PNG'
 import CalendarModal from '../components/CalendarModal';
+import Picker from 'react-mobile-picker';
+
 
 export default class HourRegistrationScreen extends React.Component {
 
@@ -16,6 +13,14 @@ export default class HourRegistrationScreen extends React.Component {
     super(props);
     
     this.state = {
+      valueGroups: {
+        hour: '04',
+        minute: '20'
+      },
+      optionGroups: {
+        hour: ['00', '01', '02', '03','04','05','06','07','08'],
+        minute: ['00', '05', '10', '15','20','25','30','35','40', '45','50']
+      },
         selectedButton: null,
         buttonsRow1: [
           {id: 0, label: "Me", selected: false},
@@ -81,6 +86,16 @@ export default class HourRegistrationScreen extends React.Component {
     buttonState[index].selected = !buttonState[index].selected
     this.setState(buttonState)
   }
+  
+  // Update the timepicker value in response to user picking event
+handleChange = (name, value) => {
+  this.setState(({valueGroups}) => ({
+    valueGroups: {
+      ...valueGroups,
+      [name]: value
+    }
+  }));
+};
 
   clearAll() {
     this.setState({
@@ -108,6 +123,9 @@ export default class HourRegistrationScreen extends React.Component {
       color: 'rgba(8, 67, 135, 0.8)',
       padding: '20px'
     };
+
+    const {optionGroups, valueGroups} = this.state;
+
 
     return (
       
@@ -177,9 +195,19 @@ export default class HourRegistrationScreen extends React.Component {
       
       
       <div style={textStyle}>How long did you work on this task?</div>
-      <div className="img container">
-        <img src={Clock} alt="clock"/>
-          </div>
+      <div style={{ 
+        width: "absolute", 
+        backgroundColor: "white", 
+        padding: "20px", 
+        margin: "20px", 
+        borderRadius: 10, 
+      }}> 
+      <Picker style={{ backgroundColor: "white"}}
+      optionGroups={optionGroups}
+      valueGroups={valueGroups}
+      onChange={this.handleChange} />
+      </div>
+
        <button 
         className="hr-button-save"
         onClick={this.clearAll}>Save</button>
