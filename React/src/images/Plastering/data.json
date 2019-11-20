@@ -1,7 +1,7 @@
 {
-    "images": [
-        {"id": "Plastering/p1", "name": "Type a"},
-        {"id": "Plastering/p2", "name": "Type b"},
-        {"id": "Plastering/p3", "name": "Type c"}     
+    "products": [
+        {"id": 1, "image": "Plastering/p1", "name": "Type a", "count": 0},
+        {"id": 1, "image": "Plastering/p2", "name": "Type b", "count": 0},
+        {"id": 1, "image": "Plastering/p3", "name": "Type c", "count": 0}     
       ]
   }

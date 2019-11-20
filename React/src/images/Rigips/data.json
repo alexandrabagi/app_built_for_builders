@@ -1,7 +1,7 @@
 {
-    "images": [
-        {"id": "Rigips/r1", "name": "Type a"},
-        {"id": "Rigips/r2", "name": "Type b"},
-        {"id": "Rigips/r3", "name": "Type c"}
+    "products": [
+        {"id": 1,"image": "Rigips/r1", "name": "Type a", "count": 0},
+        {"id": 1,"image": "Rigips/r2", "name": "Type b", "count": 0},
+        {"id": 1,"image": "Rigips/r3", "name": "Type c", "count": 0}
       ]
   }

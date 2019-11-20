@@ -6,10 +6,16 @@ export const ImageGridScreen = props => (
   <React.Fragment>
     <div className="sample-images blocks-container">
       {
-        props.images.map(image => {
+        props.items.map(item => {
           return <ImageThumbnail 
-            image={image} 
-            onClick={() => props.toggleImageSelect(image.id)} />;
+          item={item} 
+            onClick={() => props.toggleImageSelect(item.id)} 
+            IncrementCountClick={() => props.IncrementCountClick(item)} 
+            DecreaseCountClick={() => props.DecreaseCountClick(item)} 
+            showButtons={props.showButtons}
+            count  ={props.count}
+            />;
+            
         })
       }
     </div>
