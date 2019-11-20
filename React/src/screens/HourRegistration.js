@@ -56,11 +56,20 @@ changeButtonState (id, index) {
           <div style={textStyle}>Who are you registering?</div>
           <div className='row'>
 
-            <Button id = {this.state.buttonsRow1[0].id} label={this.state.buttonsRow1[0].label} selected={this.state.buttonsRow1[0].selected} onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}/>
-
-            <Popup modal trigger={ open => (
-              <button className="button-unselected">{this.state.buttonsRow1[1].label}</button>)}
+            <Button 
+              id = {this.state.buttonsRow1[0].id} 
+              label={this.state.buttonsRow1[0].label} 
+              selected={this.state.buttonsRow1[0].selected} 
+              onClick={()=> this.changeButtonState(this.state.buttonsRow1[0].id, 0)}
+            />
+            <Popup modal trigger={ (open) =>  (
+              <button 
+                className="button-unselected"
+                onClick={() => this.changeButtonState(1,1)} 
               >
+              {open ? "Chosen" : "Coworker"}
+              </button>)
+            }>
                 {close => <Content close={close} /> }
             </Popup>
 
