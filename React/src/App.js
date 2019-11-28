@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import { MaterialGridScreen } from './screens/MaterialGridScreen';
-import { OrderedScreen } from './screens/OrderedScreen';
+import OrderedScreen from './screens/OrderedScreen';
 import HourRegistrationScreen from './screens/HourRegistration';
 import ProductGridScreen from  './screens/ProductsGridScreen';
 
