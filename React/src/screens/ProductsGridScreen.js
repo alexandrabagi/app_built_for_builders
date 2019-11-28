@@ -44,6 +44,7 @@ class ProductGridScreen extends React.Component {
       this.setState({
       });
     }
+
     render() {
         return (
        <div>

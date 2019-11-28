@@ -29,8 +29,9 @@ export const ImageThumbnail = props => (
         <th>  <button className='button-add-remove' onClick={props.IncrementCountClick}> <FontAwesomeIcon icon={faPlus} size="2x" /></button></th>
       </tr>
       </tbody>
+      
     </table>
-    
+    <button className={props.showButtons ? 'button-order' : 'buttons-hidden'}> Order </button>
     
   </div>
 );
