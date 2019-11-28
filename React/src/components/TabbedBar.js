@@ -11,16 +11,19 @@ export const TabbedBar = () => (
         <NavLink to="/hours" activeClassName="selected">
           <li>
             <FontAwesomeIcon icon={faClock} size="2x" />
+            <div style={{textDecoration: 'none', fontSize: '24px'}}>Hours</div>
           </li>
         </NavLink>
         <NavLink exact to="/materials" activeClassName="selected">
           <li className="selected">
             <FontAwesomeIcon icon={faTh} size="2x" />
+            <div style={{textDecoration: 'none', fontSize: '24px'}}>Ordering</div>
           </li>
         </NavLink>
         <NavLink to="/list" activeClassName="selected">
           <li>
             <FontAwesomeIcon icon={faList} size="2x" />
+            <div style={{textDecoration: 'none', fontSize: '24px'}}>Basket</div>
           </li>
         </NavLink>
       </ul>
