@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ImageGridScreen } from '../components/ImageGridScreen';
 
+/* Contains specifc Material section e.g. all screws */
 
 class ProductGridScreen extends React.Component {
 
@@ -43,13 +44,14 @@ class ProductGridScreen extends React.Component {
       this.setState({
       });
     }
+
     render() {
         return (
        <div>
          <div>
             <h2>{this.selectedMaterial.name}</h2>
          </div>
-         <ImageGridScreen
+         <ImageGridScreen 
                   items={this.data.products}
                   toggleImageSelect = {this.toggleImageSelect}
                   IncrementCountClick = {this.IncrementCount}

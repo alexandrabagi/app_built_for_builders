@@ -46,6 +46,8 @@ body {
   max-height: 2732px;
   position: absolute;
   background-color: #dfecfa;
+  overflow: hidden;
+
 }
 
 .app h1 {
@@ -56,12 +58,18 @@ body {
 }
 
 .app h3 {
-  background-color: #084387;
-  color: #FFFFFF;
+  background-color: white;
+  height: 2em;
+  line-height: 1em;
+  overflow: hidden;
+  color: black;
   font-size: 20px;
-  padding: 10px;
-  width: 200px;
+  width: auto;  
   text-align: center;
+  font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
 }
 
 
@@ -70,16 +78,18 @@ body {
   color: #222222;
 }
 
+/* for Product Screens */
+
 .blocks-container {
+  overflow: scroll;
   display: flex;
-  height: max-content;
+  height: 78%;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
   background-color: white;
   margin: 30px 60px 0px 60px;
   border-radius: 10px;
-  overflow: scroll;
 }
 
 .blocks-container > * { /*image container*/
@@ -90,6 +100,7 @@ body {
   opacity: 0;
   position: relative;
   transition: transform 0.5s;
+
 }
 
 .blocks-container > *.selected {
@@ -111,7 +122,7 @@ body {
   animation-fill-mode: forwards;
   object-fit: cover;
   padding: 20px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   
 }
 .blocks-container table {
@@ -120,27 +131,53 @@ body {
 }
 
 .button-add-remove {
-  background-color: DodgerBlue;
+  background-color: white;
   border: none;
-  color: white;
+  color: red;
   padding: 12px 16px;
   font-size: 16px;
   cursor: pointer;
 }
-.label-count {
+
+.button-order {
+  background-color: #084387;
+  border: none;
+  width: 100%;
   color: white;
+  font-size: 28px;
+  border-radius: 10px;
+  font-weight: bold;
+  height: 56px;
+
+}
+
+.label-count {
+  color: black;
   padding: 8px;
   font-family: Arial;
   font-size: 35px;
-  background-color: rgb(230, 78, 18);
+  background-color: white;
+}
+
+.product-card-frame {
+  display: inline-table;
+  background-color: white;
+  border-style: solid;
+  border-width: thick;
+  border-color: #084387;
+  border-radius: 10px;
+  block-size: auto;  
 }
 
 .buttons-show {
   visibility: visible;
+  
 }
 .buttons-hidden {
   visibility: hidden;
 }
+
+
 
 .content-area {
   padding: 40px;
@@ -182,6 +219,8 @@ body {
   font-size: 28px;
   font-weight: bold;
 }
+
+/* Toolbars */
 
 .bottom-toolbar {
   height: 90px;
@@ -261,6 +300,8 @@ body {
   text-align: left;
 }
 
+/* To select coworker/both button*/
+
 .modal {
   font-size: 28px;
   max-height: 800px !important;
@@ -339,7 +380,6 @@ img {
 
 .img container {
   display: flex;
-  margin: 20;
   background-color: white;
   border-radius: 10px;
   justify-content: center;
@@ -349,6 +389,8 @@ div {
   flex: 1;
   justify-content: center;
 }
+
+/* React calender formatting */
 
 .react-calendar {
   border: white;
