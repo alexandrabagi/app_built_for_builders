@@ -7,6 +7,7 @@ import CalendarModal from '../components/CalendarModal';
 import Picker from 'react-mobile-picker';
 
 
+
 export default class HourRegistrationScreen extends React.Component {
 
   constructor(props) {
@@ -19,7 +20,7 @@ export default class HourRegistrationScreen extends React.Component {
       },
       optionGroups: {
         hour: ['00', '01', '02', '03','04','05','06','07','08'],
-        minute: ['00', '05', '10', '15','20','25','30','35','40', '45','50']
+        minute: ['00', '05', '10', '15','20','25','30','35','40', '45','50', '55']
       },
         selectedButton: null,
         buttonsRow1: [
@@ -126,7 +127,6 @@ handleChange = (name, value) => {
 
     const {optionGroups, valueGroups} = this.state;
 
-
     return (
       
       <div className="content-area">
@@ -202,8 +202,9 @@ handleChange = (name, value) => {
         margin: "20px", 
         borderRadius: 10, 
       }}> 
-      <Picker style={{ backgroundColor: "white"}}
+      <Picker
       optionGroups={optionGroups}
+      itemHeight={50}
       valueGroups={valueGroups}
       onChange={this.handleChange} />
       </div>
