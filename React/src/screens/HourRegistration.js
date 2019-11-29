@@ -4,6 +4,10 @@ import InputField from '../components/InputField'
 import Button from './../components/Button'
 import Modal from '../components/Modal'
 import CalendarModal from '../components/CalendarModal';
+import SaveModal from '../components/SaveModal';
+import TimeWheel from '../components/TimeWheel';
+import '../App.css' ;
+
 import Picker from 'react-mobile-picker';
 
 
@@ -15,8 +19,8 @@ export default class HourRegistrationScreen extends React.Component {
     
     this.state = {
       valueGroups: {
-        hour: '04',
-        minute: '20'
+        hour: '00',
+        minute: '00'
       },
       optionGroups: {
         hour: ['00', '01', '02', '03','04','05','06','07','08'],
@@ -35,13 +39,18 @@ export default class HourRegistrationScreen extends React.Component {
         ],
         showModal: false,
         showCalendarModal: false,
+        showSaveModal: false,
         coworker: 'Coworker',
         calendarDate: 'Other'
     }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
+
     this.openCalendarModal = this.openCalendarModal.bind(this)
     this.closeCalendarModal = this.closeCalendarModal.bind(this)
+
+    this.openSaveModal = this.openSaveModal.bind(this)
+    this.closeSaveModal = this.closeSaveModal.bind(this)
     this.clearAll = this.clearAll.bind(this)
   }
 
@@ -67,6 +76,12 @@ export default class HourRegistrationScreen extends React.Component {
     })
   }
 
+  openSaveModal() {
+    this.setState({
+      showSaveModal: true
+    })
+  }
+
   closeModal() {
     this.setState({
         showModal: false
@@ -77,6 +92,12 @@ export default class HourRegistrationScreen extends React.Component {
     this.setState({
         showCalendarModal: false
     });
+  }
+
+  closeSaveModal() {
+    this.setState({
+      showSaveModal: false
+    })
   }
 
   changeButtonState (id, index) {
@@ -100,6 +121,10 @@ handleChange = (name, value) => {
 
   clearAll() {
     this.setState({
+      valueGroups: {
+        hour: '00',
+        minute: '00'
+      },
       selectedButton: null,
         buttonsRow1: [
           {id: 0, label: "Me", selected: false},
@@ -192,9 +217,8 @@ handleChange = (name, value) => {
       <InputField
         label="Tap here to describe what you worked on." />
       </div>
-      
-      
       <div style={textStyle}>How long did you work on this task?</div>
+
       <div style={{ 
         width: "absolute", 
         backgroundColor: "white", 
@@ -202,17 +226,32 @@ handleChange = (name, value) => {
         margin: "20px", 
         borderRadius: 10, 
       }}> 
-      <Picker
-      optionGroups={optionGroups}
-      itemHeight={50}
-      valueGroups={valueGroups}
-      onChange={this.handleChange} />
+
+      <TimeWheel></TimeWheel>
+        
       </div>
 
        <button 
         className="hr-button-save"
-        onClick={this.clearAll}>Save</button>
+        onClick={() => {
+          this.openSaveModal()
+          this.clearAll()
+        }}
+        >Save</button>
+
+<SaveModal
+            show={this.state.showSaveModal}
+            onClose={this.closeSaveModal}
+            animation={false} 
+          /> 
 
     </div>
   )};
 };
+
+/** <Picker
+          optionGroups={optionGroups}
+          itemHeight={50}
+          valueGroups={valueGroups}
+          onChange={this.handleChange} 
+        /> */

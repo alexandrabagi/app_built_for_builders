@@ -429,4 +429,62 @@ div {
     height: 31vw;
     margin-bottom: 3.5vw;
   }
+
 }
+
+/* TimeWheel*/
+.time-wheel-container {
+  overflow: hidden;
+  height: 200px;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0%;
+
+
+}
+
+.time-wheel-container-inner {
+  overflow: inherit;
+  height: 180px;
+  align-items: center;
+  display:inline-block;
+  border-radius: 10px;
+
+}
+
+.column-time-wheel{
+  height: 5em;
+  overflow: auto;
+  height: 130px ;
+  list-style-type: none;
+  display:inline-block;
+  list-style-type: none;
+  padding-right: 40px;
+}
+
+.column-time-wheel::-webkit-scrollbar{
+  display: none; 
+
+}
+
+.time-wheel-number{
+  line-height: 2rem;
+    font-size: 30px;
+    color: #868686;
+
+}
+
+.mytxt{
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 10px;
+display: flex;
+padding-top: 7px;
+align-items: center;
+text-align: center;
+
+color: #868686;
+}
+
+

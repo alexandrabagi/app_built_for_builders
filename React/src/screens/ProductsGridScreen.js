@@ -24,7 +24,8 @@ class ProductGridScreen extends React.Component {
       //for now we let the toogleimage method do the same as if you click add
       let productsToLookUp = [...this.data.products];
       let selectedItem = productsToLookUp.find(item => item.id === id);
-      selectedItem.count = selectedItem.count + 1 
+      //what should code below do? it made increase the counter for first item everytime any item image was clicked
+      //selectedItem.count = selectedItem.count +1 
       //makes the ui re-render it self
       this.setState({
       });
