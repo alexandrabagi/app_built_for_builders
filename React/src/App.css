@@ -172,6 +172,12 @@ body {
   border-radius: 10px;
   block-size: auto;  
 }
+.loading-show {
+  visibility: visible;
+}
+.loading-hidden {
+  visibility: hidden;
+}
 
 .buttons-show {
   visibility: visible;

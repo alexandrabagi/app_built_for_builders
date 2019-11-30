@@ -15,7 +15,7 @@ class ProductGridScreen extends React.Component {
     //when a material is found, then use the image property for finding the correct json file in the folder structure.
     this.data = require('../images/'+this.selectedMaterial.image + '/data.json');
     this.state = {
-      isLoading: true,
+      isSaving: false,
       dataToken: null,
       dataTokenDate: null,
       itemToOrder: null
@@ -23,22 +23,36 @@ class ProductGridScreen extends React.Component {
   }
    
 
-
     
-    toggleImageSelect = (id) => {
-
+  toggleImageSelect = (id) => {
       //for now we let the toogleimage method do the same as if you click add
       let productsToLookUp = [...this.data.products];
       let selectedItem = productsToLookUp.find(item => item.id === id);
       selectedItem.count = selectedItem.count + 1 
       //makes the ui re-render it self
-     
     }
-    OrderProduct = (item) => {
 
+  IncrementCount = (item) => {
+      item.count = item.count + 1 
+      //makes the ui re-render it self, so count is updating
+    this.setState({
+    });
+  }
+
+  DecreaseCount =  (item) => {
+    if(item.count > 0)
+      item.count = item.count - 1 
+    //makes the ui re-render it self, so count is updating
+    this.setState({
+    });
+  }
+
+
+  OrderProduct = (item) => {
       var validToken = false;
-      if(this.state.dataTokenDate != null)
-      {
+      if(this.state.dataToken != null && this.state.dataTokenDate != null)
+      {//Check if token is less than 12 min old (server have 15 min span)
+        //https://www.w3resource.com/javascript-exercises/javascript-date-exercise-44.php
         var currentTime = new Date()
         var diff =(currentTime.getTime() - this.state.dataTokenDate.getTime()) / 1000;
         diff /= 60;
@@ -48,8 +62,7 @@ class ProductGridScreen extends React.Component {
         }
       }
 
-    
-
+    //If token is still valid than go directly to Order() method, otherwise use LogInAndOrder() method to first login and than order
       if(validToken){
         this.Order(item)
       }
@@ -58,36 +71,10 @@ class ProductGridScreen extends React.Component {
       }
   }
 
-    IncrementCount = (item) => {
-        item.count = item.count + 1 
-        //makes the ui re-render it self
-      var currentDataToken = this.state.dataToken;
-      var currentdataTokenDate = this.state.dataTokenDate;
-      this.setState({
-        dataToken : currentDataToken,
-        dataTokenDate: currentdataTokenDate,
-        isLoading: false,
-        itemToOrder: null
-      });
-    }
-
-    DecreaseCount =  (item) => {
-      if(item.count > 0)
-        item.count = item.count - 1 
-      //makes the ui re-render it self
-      var currentDataToken = this.state.dataToken;
-      var currentdataTokenDate = this.state.dataTokenDate;
-      this.setState({
-        dataToken : currentDataToken,
-        dataTokenDate : currentdataTokenDate,
-        isLoading: false,
-        itemToOrder: null
-      });
-
-    }
-
-    LogInAndOrder =  (item) => {
-
+ 
+    
+  //The method for both: logging in by getting the token and ordering 
+  LogInAndOrder =  (item) => {
       this.setState({
         itemToOrder : {
               fieldData:{
@@ -97,6 +84,7 @@ class ProductGridScreen extends React.Component {
               }
           }
       });
+
       return fetch('https://cloud.protabase.com/fmi/data/vLatest/databases/ByggeBygge_DEV_DATA/sessions', {
         method: 'POST',
         headers: {
@@ -105,26 +93,19 @@ class ProductGridScreen extends React.Component {
           'Authorization': 'Basic YWRtaW46MzMyMnFqMnM='
         }
     })
-       .then ((response) =>{
-        if (!response.ok) {
-          console.log(response.statusText);
-        }
-        return response;
-      })
+      // The response translated to json
       .then ((response) =>response.json())
       .then ((responseJson) => {
-
-
        this.setState({
           isSaving: true,
           dataToken: responseJson.response.token,
-          dataTokenDate : new Date()
+          dataTokenDate : new Date() //DB do not give us creation date-time, so we create it ourselves here
         })
 
       })
-
       // save data
       .then (() =>{
+        //turn itemToOrder from this.state into json string as jsonData
         var jsonData =  JSON.stringify(this.state.itemToOrder)
         fetch('https://cloud.protabase.com/fmi/data/vLatest/databases/ByggeBygge_DEV_DATA/layouts/@MatOrd/records', {
       method: 'POST',
@@ -138,17 +119,12 @@ class ProductGridScreen extends React.Component {
   .then ( (response) => response.json() )
       .then ( (responseJson) => {
         console.log(responseJson.response);
-        var currentDataToken = this.state.dataToken;
-        var currentdataTokenDate = this.state.dataTokenDate;
         this.setState({
-          dataToken : currentDataToken,
-          dataTokenDate: currentdataTokenDate,
           isSaving: false,
-          itemToOrder: null //reset the item to order to null; 
+          //reset the item to order to null; 
+          itemToOrder: null 
         })
       })
-
-
       })
     .catch((error) => {
       console.log(error)
@@ -157,7 +133,8 @@ class ProductGridScreen extends React.Component {
 
 
 
-    Order =  (item) => {
+  //The method for: only ordering
+   Order =  (item) => {
 
      this.state.itemToOrder = {
               fieldData:{
@@ -166,8 +143,8 @@ class ProductGridScreen extends React.Component {
                 ItemAmount: item.count
               }
           }
-       var jsonData =  JSON.stringify(this.state.itemToOrder)
-        return fetch('https://cloud.protabase.com/fmi/data/vLatest/databases/ByggeBygge_DEV_DATA/layouts/@MatOrd/records', {
+      var jsonData =  JSON.stringify(this.state.itemToOrder)
+      return fetch('https://cloud.protabase.com/fmi/data/vLatest/databases/ByggeBygge_DEV_DATA/layouts/@MatOrd/records', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -179,20 +156,16 @@ class ProductGridScreen extends React.Component {
     .then ( (response) => response.json() )
     .then ( (responseJson) => {
         console.log(responseJson.response);
-        var currentDataToken = this.state.dataToken;
-        var currentdataTokenDate = this.state.dataTokenDate;
         this.setState({
-          dataToken : currentDataToken,
-          dataTokenDate: currentdataTokenDate,
           isSaving: false,
-          itemToOrder: null //reset the item to order to null; 
+          //reset the item to order to null; 
+          itemToOrder: null 
         })
       })
       .catch((error) => {
       console.log(error)
       });
     }
-    
     
 
     render() {
@@ -209,7 +182,7 @@ class ProductGridScreen extends React.Component {
                   OrderProductClick = {this.OrderProduct}
                   showButtons = {true}
                 />
-         
+        
         </div>
       );
     }
