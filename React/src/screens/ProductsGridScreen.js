@@ -17,6 +17,7 @@ class ProductGridScreen extends React.Component {
     this.state = {
       isLoading: true,
       dataToken: null,
+      dataTokenDate: null,
       itemToOrder: null
     }
   }
@@ -34,6 +35,59 @@ class ProductGridScreen extends React.Component {
      
     }
     OrderProduct = (item) => {
+
+      var validToken = false;
+      if(this.state.dataTokenDate != null)
+      {
+        var currentTime = new Date()
+        var diff =(currentTime.getTime() - this.state.dataTokenDate.getTime()) / 1000;
+        diff /= 60;
+        var totalMins =  Math.abs(Math.round(diff));
+        if(totalMins < 12){
+          validToken = true; 
+        }
+      }
+
+    
+
+      if(validToken){
+        this.Order(item)
+      }
+      else{
+        this.LogInAndOrder(item);
+      }
+  }
+
+    IncrementCount = (item) => {
+        item.count = item.count + 1 
+        //makes the ui re-render it self
+      var currentDataToken = this.state.dataToken;
+      var currentdataTokenDate = this.state.dataTokenDate;
+      this.setState({
+        dataToken : currentDataToken,
+        dataTokenDate: currentdataTokenDate,
+        isLoading: false,
+        itemToOrder: null
+      });
+    }
+
+    DecreaseCount =  (item) => {
+      if(item.count > 0)
+        item.count = item.count - 1 
+      //makes the ui re-render it self
+      var currentDataToken = this.state.dataToken;
+      var currentdataTokenDate = this.state.dataTokenDate;
+      this.setState({
+        dataToken : currentDataToken,
+        dataTokenDate : currentdataTokenDate,
+        isLoading: false,
+        itemToOrder: null
+      });
+
+    }
+
+    LogInAndOrder =  (item) => {
+
       this.setState({
         itemToOrder : {
               fieldData:{
@@ -59,9 +113,12 @@ class ProductGridScreen extends React.Component {
       })
       .then ((response) =>response.json())
       .then ((responseJson) => {
+
+
        this.setState({
           isSaving: true,
           dataToken: responseJson.response.token,
+          dataTokenDate : new Date()
         })
 
       })
@@ -81,7 +138,11 @@ class ProductGridScreen extends React.Component {
   .then ( (response) => response.json() )
       .then ( (responseJson) => {
         console.log(responseJson.response);
+        var currentDataToken = this.state.dataToken;
+        var currentdataTokenDate = this.state.dataTokenDate;
         this.setState({
+          dataToken : currentDataToken,
+          dataTokenDate: currentdataTokenDate,
           isSaving: false,
           itemToOrder: null //reset the item to order to null; 
         })
@@ -89,35 +150,50 @@ class ProductGridScreen extends React.Component {
 
 
       })
-
     .catch((error) => {
       console.log(error)
     });
-  }
-
-    IncrementCount = (item) => {
-        item.count = item.count + 1 
-        //makes the ui re-render it self
-     it  var currentDataToken = this.state.dataToken;
-      this.setState({
-        dataToken : currentDataToken,
-        isLoading: false,
-        itemToOrder: null
-      });
     }
 
-    DecreaseCount =  (item) => {
-      if(item.count > 0)
-        item.count = item.count - 1 
-      //makes the ui re-render it self
-      var currentDataToken = this.state.dataToken;
-      this.setState({
-        dataToken : currentDataToken,
-        isLoading: false,
-        itemToOrder: null
-      });
 
+
+    Order =  (item) => {
+
+     this.state.itemToOrder = {
+              fieldData:{
+                ItemID :item.id,
+                ItemName:item.name,
+                ItemAmount: item.count
+              }
+          }
+       var jsonData =  JSON.stringify(this.state.itemToOrder)
+        return fetch('https://cloud.protabase.com/fmi/data/vLatest/databases/ByggeBygge_DEV_DATA/layouts/@MatOrd/records', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.state.dataToken
+        },
+        body: jsonData 
+    })
+    .then ( (response) => response.json() )
+    .then ( (responseJson) => {
+        console.log(responseJson.response);
+        var currentDataToken = this.state.dataToken;
+        var currentdataTokenDate = this.state.dataTokenDate;
+        this.setState({
+          dataToken : currentDataToken,
+          dataTokenDate: currentdataTokenDate,
+          isSaving: false,
+          itemToOrder: null //reset the item to order to null; 
+        })
+      })
+      .catch((error) => {
+      console.log(error)
+      });
     }
+    
+    
 
     render() {
         return (
