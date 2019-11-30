@@ -31,7 +31,7 @@ export const ImageThumbnail = props => (
       </tbody>
       
     </table>
-    <button className={props.showButtons ? 'button-order' : 'buttons-hidden'}> Order </button>
+    <button className={props.showButtons ? 'button-order' : 'buttons-hidden'} onClick={props.OrderProductClick }> Order </button>
     
   </div>
 );
