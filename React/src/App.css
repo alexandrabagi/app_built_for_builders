@@ -450,6 +450,34 @@ div {
   padding: 0px;
 }
 
+.table {
+  
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.tbody {  
+  align-content: center;
+  background-color: white;
+  width: 100%;
+}
+
+#ordered_items {
+  text-align: center;
+  font-size: 28px;
+}
+
+#table_holder {
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 576px) {
 
   body, html {

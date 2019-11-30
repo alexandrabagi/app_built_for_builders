@@ -14,7 +14,6 @@ export default class OrderedScreen extends React.Component {
   }
   
   componentDidMount() {
-    console.log("Entered componentDidMount")
     this.fetchData()
     /* // fetch access token from API
     console.log("DataToken before if: " + this.state.dataToken)
@@ -69,39 +68,41 @@ export default class OrderedScreen extends React.Component {
       console.log(error);
     }
   }
-  
-  
+
+  renderTableData() {
+    return this.state.dataSource.map((item) => {
+       return (
+        <tr key = {item.fieldData.ItemID}>
+          <td>{item.fieldData.ItemID}</td>
+          <td>{item.fieldData.ItemName}</td>
+          <td>{item.fieldData.ItemAmount}</td>
+        </tr>
+       )
+    })
+ }
+
+ renderTableHeader() {
+  let header = ['ItemID', 'ItemName', 'ItemAmount']
+  return header.map((key, index) => {
+     return <th key={index}>{key.toUpperCase()}</th>
+  })
+}
  
   render() {
-    //const data = this.state.dataSource
-    /* if (this.state.isLoading) {
-      return (
-        <div>Loading...</div>
-      )
-    } else { */
-      //console.log(data.response.data)
-      console.log(this.state.dataSource)
-      console.log(this.state.isLoading)
       if (this.state.isLoading === true) {
         return (
           <div>Loading...</div>
         )
       } else {
         return (
-          <div>
-            <div>Item ID, Item name, Amount</div>
-            <div> {
-              this.state.dataSource.map((item) => {
-              return (
-                <h3>
-                  {item.fieldData.ItemID}
-                  {item.fieldData.ItemName}
-                  {item.fieldData.ItemAmount}
-                </h3>
-              )
-            })
-            } </div>
-          </div>
+          <div id='table_holder'>
+          <table id='ordered_items'>
+            <tbody>
+                  <tr>{this.renderTableHeader()}</tr>
+                  {this.renderTableData()}
+            </tbody>
+          </table>
+          </div> 
         )}
     }
 }
