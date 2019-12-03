@@ -53,7 +53,7 @@ export default class OrderedScreen extends React.Component {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 5e3a10da6440fd4ba3f415960ddc4ecacb7d2b6f063b3f89c150' //+ this.state.dataToken
+          'Authorization': 'Bearer 1d29777820d178c381b4551855ac20351091956d56426ba2d858' //+ this.state.dataToken
         }
       });
       const responseJson = await response.json();
@@ -97,7 +97,7 @@ export default class OrderedScreen extends React.Component {
         return (
           <div id='table_holder'>
           <table id='ordered_items'>
-            <tbody>
+            <tbody style={{'height': '1140px', 'overflow':'scroll', 'display': 'block'}}>
                   <tr>{this.renderTableHeader()}</tr>
                   {this.renderTableData()}
             </tbody>
