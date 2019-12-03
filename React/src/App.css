@@ -199,7 +199,7 @@ body {
   color: #898989;
   border: none;
   border-radius: 10px;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: normal;
   margin: 20px;
 }
@@ -211,7 +211,7 @@ body {
   color: #084387;
   margin: 20px;
   border-radius: 10px;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
   border: 4px solid #084387;
 }
@@ -224,7 +224,7 @@ body {
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 10px;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
 }
 
@@ -384,7 +384,7 @@ body {
   padding: 0px 16px;
   border: none;
   border-radius: 10px;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 400;
   line-height: normal;
  
@@ -410,6 +410,15 @@ img {
 div {
   flex: 1;
   justify-content: center;
+}
+
+.picker-item {
+  font-size: 50px;
+}
+
+.picker-item-selected {
+  color: #084387 !important;
+  font-weight: bold;
 }
 
 /* React calender formatting */
@@ -454,6 +463,60 @@ div {
   background: #084387 !important;
   border-radius: 20px;
   padding: 0px;
+}
+
+.toasts-container {
+  font-size: 28px;
+  background-position-y: center;
+  padding: 20px;
+}
+
+.toast-success {
+  background-color: #FFFFFF !important;
+  color: crimson !important;
+}
+
+.toast-success-save {
+  color: rgb(32, 150, 95) !important;
+  font-size: 50px;
+}
+
+.table {
+  
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.tbody {  
+  display: block;
+  height: 100px;
+  align-content: center;
+  background-color: white;
+  width: 100%;
+  overflow: scroll;
+}
+
+
+#ordered_items {
+  text-align: center;
+  font-size: 28px;
+  overflow: scroll;
+}
+
+#table_header {
+  padding: 20px;
+  overflow: hidden;
+}
+
+#table_holder {
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 576px) {
