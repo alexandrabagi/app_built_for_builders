@@ -20,7 +20,7 @@ export const ImageThumbnail = props => (
     //alt="brick"
     onClick={props.onClick} />
     
-    <h3>{props.item.name}</h3>
+    <h3 style={{fontSize: '32px', marginTop: '20px'}}>{props.item.name}</h3>
     <table className={props.showButtons ? 'buttons-show' : 'buttons-hidden'}  >
     <tbody>
       <tr>
