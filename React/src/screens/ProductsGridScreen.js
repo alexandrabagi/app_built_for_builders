@@ -22,8 +22,6 @@ class ProductGridScreen extends React.Component {
     }
   }
 
-
-
   toggleImageSelect = (id) => {
     //for now we let the toogleimage method do the same as if you click add
     let productsToLookUp = [...this.data.products];
@@ -128,9 +126,7 @@ class ProductGridScreen extends React.Component {
         console.log(error)
       });
   }
-
-
-
+  
   //The method for: only ordering
   Order = (item) => {
 

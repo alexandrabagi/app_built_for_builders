@@ -1,5 +1,5 @@
 import React from 'react';
-import data from '../data/fetched'
+// import data from '../data/fetched'
 
 export default class OrderedScreen extends React.Component {
 
@@ -13,8 +13,7 @@ export default class OrderedScreen extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log("Entered checkToken")
+  /* componentDidMount() {
     var validToken = false;
     console.log("Datatoken: " + this.state.dataToken)
     console.log("DataTokenDate: " + this.state.dataTokenDate)
@@ -35,9 +34,10 @@ export default class OrderedScreen extends React.Component {
     }
     else {
       console.log("Entered else statement")
-      this.login().then(() => this.fetchData())
+      this.login()
+      this.fetchData()
     }
-  }
+  } */
 
   login = () => {
     // fetch access token from API
@@ -49,18 +49,22 @@ export default class OrderedScreen extends React.Component {
         'Content-Type': 'application/json',
         'Authorization': 'Basic YWRtaW46MzMyMnFqMnM='
       },
-      //body: {}
+      body: {}
     })
       // The response translated to json
-      .then((response) => {
-        return response.json()})
+      .then((response) => response.json())
       .then((responseJson) => {
+        console.log("Response" + responseJson)
         this.setState({
           isLoading: true,
           dataToken: responseJson.response.token,
           dataTokenDate: new Date() //DB do not give us creation date-time, so we create it ourselves here
         })
       })
+      .then(() => {
+        console.log("Datatoken in login: " + this.state.dataToken)
+      }  
+      )
   }
 
   fetchData = async () => {
@@ -109,8 +113,6 @@ export default class OrderedScreen extends React.Component {
 
   render() {
     if (this.state.isLoading === true) {
-      console.log("Entered if")
-      //this.checkToken()
       return (
         <div>Loading...</div>
       )
