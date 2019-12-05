@@ -93,7 +93,7 @@ export default class OrderedScreen extends React.Component {
       return (
         <tr key={item.fieldData.ItemID}>
           <td>{item.fieldData.ItemID}</td>
-          <td>{item.fieldData.ItemName}</td>
+          <td style={{width: '1000px'}}>{item.fieldData.ItemName}</td>
           <td>{item.fieldData.ItemAmount}</td>
         </tr>
       )
