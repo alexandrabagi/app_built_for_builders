@@ -6,7 +6,7 @@ import Modal from '../components/Modal'
 import CalendarModal from '../components/CalendarModal';
 import SaveModal from '../components/SaveModal';
 import TimeWheel from '../components/TimeWheel';
-import '../App.css' ;
+import '../App.css';
 
 import Picker from 'react-mobile-picker';
 
@@ -208,35 +208,40 @@ export default class HourRegistrationScreen extends React.Component {
             label="Tap here to describe what you worked on." />
         </div>
 
-    
-      <div style={textStyle}>How long did you work on this task?</div>
 
-      <div style={{ 
-        width: "absolute", 
-        backgroundColor: "white", 
-        padding: "20px", 
-        margin: "20px", 
-        borderRadius: 10, 
-      }}> 
+        <div style={textStyle}>How long did you work on this task?</div>
 
-      <TimeWheel></TimeWheel>
-        
-      </div>
+        <div style={{
+          width: "absolute",
+          backgroundColor: "white",
+          padding: "10px",
+          margin: "20px",
+          borderRadius: 10,
+        }}>
+          <Picker
+            optionGroups={optionGroups}
+            itemHeight={50}
+            valueGroups={valueGroups}
+            onChange={this.handleChange} />
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ display: 'flex', fontSize: '30px', color: 'rgba(8, 67, 135, 0.8)' }}>hours</div>
+            <div style={{ display: 'flex', fontSize: '30px', color: 'rgba(8, 67, 135, 0.8)' }}>minutes</div>
+          </div>
 
-       <button 
+        </div>
+        <button
         className="hr-button-save"
         onClick={() => {
           this.openSaveModal()
           this.clearAll()
         }}
-        >Save</button>
+      >Save</button>
 
-<SaveModal
-            show={this.state.showSaveModal}
-            onClose={this.closeSaveModal}
-            animation={false} 
-          /> 
-
+      <SaveModal
+        show={this.state.showSaveModal}
+        onClose={this.closeSaveModal}
+        animation={false}
+      /> 
       </div>
     )
   };
