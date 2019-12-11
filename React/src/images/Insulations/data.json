@@ -1,7 +1,7 @@
 {
     "products": [
-        {"id": 1,"image": "Insulations/i1", "name": "type a", "count": 0},
-        {"id": 1,"image": "Insulations/i2", "name": "type b", "count": 0},
-        {"id": 1,"image": "Insulations/i3", "name": "type c", "count": 0}
+        {"id": 41,"image": "Insulations/i1", "name": "Insulaton 1", "count": 0},
+        {"id": 42,"image": "Insulations/i2", "name": "Insulaton 2", "count": 0},
+        {"id": 43,"image": "Insulations/i3", "name": "Insulaton 3", "count": 0}
       ]
   }

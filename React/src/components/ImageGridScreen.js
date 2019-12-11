@@ -12,6 +12,7 @@ export const ImageGridScreen = props => (
             onClick={() => props.toggleImageSelect(item.id)} 
             IncrementCountClick={() => props.IncrementCountClick(item)} 
             DecreaseCountClick={() => props.DecreaseCountClick(item)} 
+            OrderProductClick={() => props.OrderProductClick(item)} 
             showButtons={props.showButtons}
             count  ={props.count}
             />;

@@ -1,0 +1,54 @@
+{
+    "response": {
+        "dataInfo": {
+            "database": "ByggeBygge_DEV_DATA",
+            "layout": "@MatOrd",
+            "table": "MatOrd",
+            "totalRecordCount": 2,
+            "foundCount": 2,
+            "returnedCount": 2
+        },
+        "data": [
+            {
+                "fieldData": {
+                    "id": "ABFA484F-82EF-41E8-B8A2-0A161D410D6F",
+                    "idProject": "",
+                    "idPerson": "",
+                    "ItemID": "1",
+                    "ItemName": "Item 1",
+                    "ItemAmount": 1,
+                    "CreationTimestamp": "11/28/2019 12:35:35",
+                    "CreatedBy": "admin",
+                    "ModificationTimestamp": "11/28/2019 12:37:30",
+                    "ModifiedBy": "admin"
+                },
+                "portalData": {},
+                "recordId": "1",
+                "modId": "1"
+            },
+            {
+                "fieldData": {
+                    "id": "72F4990E-4F52-4BA5-A524-3562C6CAB191",
+                    "idProject": "",
+                    "idPerson": "",
+                    "ItemID": "2",
+                    "ItemName": "Item 2",
+                    "ItemAmount": 7,
+                    "CreationTimestamp": "11/28/2019 12:45:51",
+                    "CreatedBy": "admin",
+                    "ModificationTimestamp": "11/28/2019 12:45:59",
+                    "ModifiedBy": "admin"
+                },
+                "portalData": {},
+                "recordId": "2",
+                "modId": "0"
+            }
+        ]
+    },
+    "messages": [
+        {
+            "code": "0",
+            "message": "OK"
+        }
+    ]
+}

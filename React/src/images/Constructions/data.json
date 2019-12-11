@@ -1,7 +1,7 @@
 {
     "products": [
-        {"id": 1,"image": "Constructions/c1", "name": "regular", "count": 0},
-        {"id": 1,"image": "Constructions/c2", "name": "regular", "count": 0},
-        {"id": 1,"image": "Constructions/c3", "name": "regular", "count": 0}
+        {"id": 51,"image": "Constructions/c1", "name": "Constructions 1", "count": 0},
+        {"id": 52,"image": "Constructions/c2", "name": "Constructions 2", "count": 0},
+        {"id": 53,"image": "Constructions/c3", "name": "Constructions 3", "count": 0}
       ]
   }
