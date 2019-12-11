@@ -23,7 +23,7 @@ export const TabbedBar = () => (
         <NavLink to="/list" activeClassName="selected">
           <li>
             <FontAwesomeIcon icon={faList} size="2x" />
-            <div style={{textDecoration: 'none', fontSize: '24px'}}>Basket</div>
+            <div style={{textDecoration: 'none', fontSize: '24px'}}>List</div>
           </li>
         </NavLink>
       </ul>
