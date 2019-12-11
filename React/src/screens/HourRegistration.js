@@ -189,7 +189,7 @@ export default class HourRegistrationScreen extends React.Component {
         <div style={{
           width: "absolute",
           backgroundColor: "white",
-          padding: "20px",
+          padding: "10px",
           margin: "20px",
           borderRadius: 10,
         }}>
@@ -198,6 +198,11 @@ export default class HourRegistrationScreen extends React.Component {
             itemHeight={50}
             valueGroups={valueGroups}
             onChange={this.handleChange} />
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+              <div style={{display: 'flex', fontSize: '30px', color: 'rgba(8, 67, 135, 0.8)'}}>hours</div>
+              <div style={{display: 'flex', fontSize: '30px', color: 'rgba(8, 67, 135, 0.8)'}}>minutes</div>
+            </div>
+            
         </div>
 
         <button
