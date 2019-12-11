@@ -37,7 +37,7 @@ class SaveModal extends React.Component {
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
           {this.props.children}
-          <div>You successfully registered your working hours!</div>
+          <div>{this.props.title}</div>
            
             <button 
                 className="hr-button-save"

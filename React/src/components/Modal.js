@@ -1,17 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropdownMenu from './Dropdown'
+import SaveModal from '../components/SaveModal'
 
 class Modal extends React.Component {
   
   state = { 
-    selectedCoworker: ''
+    selectedCoworker: '',
+    showSaveModal: false
   }
 
   handleCoworker = (name) => {
     this.setState({ selectedCoworker: name })
     console.log('Value from Modal: ' + name)
     this.props.selectedCoworkerM(name)
+  }
+
+  openSaveModal() {
+    this.setState({
+      showSaveModal: true
+    })
+  }
+
+  closeSaveModal() {
+    this.setState({
+      showSaveModal: false
+    })
   }
   
   render() {
@@ -53,9 +67,17 @@ class Modal extends React.Component {
             </div>
             <button 
                 className="hr-button-save"
-                onClick={() => { this.props.onClose() }}>
+                onClick={() => { this.state.selectedCoworker === '' ?
+                  this.openSaveModal() :
+                  this.props.onClose() }}>
                 Save
             </button>
+            <SaveModal
+              title='Please choose a coworker!'
+              show={this.state.showSaveModal}
+              onClose={() => this.closeSaveModal()}
+              animation={false}
+      /> 
         </div>
       </div>
     );

@@ -36,8 +36,11 @@ export default class HourRegistrationScreen extends React.Component {
       ],
       showModal: false,
       showCalendarModal: false,
+      showSaveModal: false,
       coworker: 'Coworker',
-      calendarDate: 'Other'
+      calendarDate: 'Other',
+      inputLabel: 'Tap here to describe what you worked on.',
+      inputValue: ''
     }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
@@ -139,7 +142,10 @@ export default class HourRegistrationScreen extends React.Component {
       showModal: false,
       showCalendarModal: false,
       coworker: 'Coworker',
-      calendarDate: 'Other'
+      calendarDate: 'Other',
+      inputValue: '',
+      inputLabel: 'Tap here to describe what you worked on.',
+      
     })
   }
 
@@ -205,7 +211,8 @@ export default class HourRegistrationScreen extends React.Component {
 
         <div>
           <InputField
-            label="Tap here to describe what you worked on." />
+            label={this.state.inputLabel} 
+            value={this.state.inputValue}/>
         </div>
 
 
@@ -238,6 +245,7 @@ export default class HourRegistrationScreen extends React.Component {
       >Save</button>
 
       <SaveModal
+        title='You successfully registered your working hours!'
         show={this.state.showSaveModal}
         onClose={this.closeSaveModal}
         animation={false}
