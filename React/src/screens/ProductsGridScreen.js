@@ -45,7 +45,7 @@ class ProductGridScreen extends React.Component {
     }
     render() {
         return (
-       <div className="app">
+       <div>
          <div>
             <h2>{this.selectedMaterial.name}</h2>
          </div>
