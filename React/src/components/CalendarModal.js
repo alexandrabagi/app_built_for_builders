@@ -12,10 +12,8 @@ class CalendarModal extends React.Component {
 
   onChange = date => {
     this.setState({ date })
-    console.log("Date: " + date)
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let today=date.getDate() + " "+ monthNames[parseInt(date.getMonth())];
-    console.log("Today: " + today)
     this.props.chosenDate(today)
   } 
 

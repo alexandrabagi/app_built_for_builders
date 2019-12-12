@@ -72,7 +72,7 @@ class Modal extends React.Component {
                   this.props.onClose() }}>
                 Save
             </button>
-            <SaveModal
+            <SaveModal 
               title='Please choose a coworker!'
               show={this.state.showSaveModal}
               onClose={() => this.closeSaveModal()}
