@@ -223,7 +223,6 @@ export default class HourRegistrationScreen extends React.Component {
             />
         </div>
 
-
         <div style={textStyle}>How long did you work on this task?</div>
 
         <div style={{
