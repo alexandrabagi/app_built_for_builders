@@ -139,7 +139,7 @@ body {
   border: none;
   color: red;
   padding: 12px 16px;
-  font-size: 16px;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -159,13 +159,14 @@ body {
   color: black;
   padding: 8px;
   font-family: Arial;
-  font-size: 35px;
+  font-size: 40px;
   background-color: white;
 }
 
 .product-card-frame {
   display: inline-table;
   background-color: white;
+  width: 350px;
   border-style: solid;
   border-width: thick;
   border-color: #084387;

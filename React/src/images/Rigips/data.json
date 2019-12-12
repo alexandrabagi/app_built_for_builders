@@ -1,7 +1,7 @@
 {
     "products": [
-        {"id": 81,"image": "Rigips/r1", "name": "Rigips a", "count": 0},
-        {"id": 82,"image": "Rigips/r2", "name": "Rigips b", "count": 0},
-        {"id": 83,"image": "Rigips/r3", "name": "Rigips c", "count": 0}
+        {"id": 81,"image": "Rigips/r1", "name": "Rigips a", "quantity": "10 Pack","count": 0},
+        {"id": 82,"image": "Rigips/r2", "name": "Rigips b", "quantity": "5 Pack","count": 0},
+        {"id": 83,"image": "Rigips/r3", "name": "Rigips c", "quantity": "130 Pack","count": 0}
       ]
   }

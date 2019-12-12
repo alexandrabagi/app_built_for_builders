@@ -1,7 +1,7 @@
 {
     "products": [
-        {"id": 61,"image": "Roofing/r1", "name": "Roofing a", "count": 0},
-        {"id": 62,"image": "Roofing/r2", "name": "Roofing b", "count": 0},
-        {"id": 63,"image": "Roofing/r3", "name": "Roofing c", "count": 0}
+        {"id": 61,"image": "Roofing/r1", "name": "Roofing a", "quantity": "20 Pack","count": 0},
+        {"id": 62,"image": "Roofing/r2", "name": "Roofing b", "quantity": "20 Pack","count": 0},
+        {"id": 63,"image": "Roofing/r3", "name": "Roofing c", "quantity": "20 Pack","count": 0}
       ]
   }

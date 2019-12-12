@@ -45,7 +45,6 @@ class ProductGridScreen extends React.Component {
     });
   }
 
-
   OrderProduct = (item) => {
     var validToken = false;
     if (this.state.dataToken != null && this.state.dataTokenDate != null) {//Check if token is less than 12 min old (server have 15 min span)
@@ -66,6 +65,16 @@ class ProductGridScreen extends React.Component {
     else {
       this.LogInAndOrder(item);
     }
+
+    this.SetCountToZero(item)
+  }
+
+  SetCountToZero = (item) => {
+    if (item.count > 0)
+      item.count = 0
+    //makes the ui re-render it self, so count is updating
+    this.setState({
+    });
   }
 
   //The method for both: logging in by getting the token and ordering 
@@ -160,6 +169,7 @@ class ProductGridScreen extends React.Component {
         console.log(error)
       });
   }
+
 
 
   render() {

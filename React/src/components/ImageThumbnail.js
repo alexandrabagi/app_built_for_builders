@@ -1,10 +1,12 @@
 import React from 'react';
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SaveModal from '../components/SaveModal';
 
 
 export const ImageThumbnail = props => (
 
+  
   
   <div className='product-card-frame'>
     {/* 
@@ -20,7 +22,10 @@ export const ImageThumbnail = props => (
     //alt="brick"
     onClick={props.onClick} />
     
-    <h3 style={{fontSize: '32px', marginTop: '20px'}}>{props.item.name}</h3>
+    <div style = {{margin: '0', height: 'auto',padding: '0'}}>
+      <h3 style={{fontSize: '32px', marginTop: '15px', height: "1em"}}>{props.item.name}</h3>
+    </div>
+    <div style = {{fontSize: '28px', padding: '0', margin: '5' }}>{props.item.quantity} </div>
     <table className={props.showButtons ? 'buttons-show' : 'buttons-hidden'}  >
     <tbody>
       <tr>

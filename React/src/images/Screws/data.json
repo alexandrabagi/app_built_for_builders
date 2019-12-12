@@ -1,13 +1,13 @@
 {
     "products": [
-        {"id": 11,"image": "Screws/s1", "name": "Screw Type a", "count": 0},
-        {"id": 12,"image": "Screws/s2", "name": "Screw Type b", "count": 0},
-        {"id": 13,"image": "Screws/s3", "name": "Screw Type c", "count": 0},
-        {"id": 14,"image": "Screws/s4", "name": "Screw Type d", "count": 0},
-        {"id": 15,"image": "Screws/s5", "name": "Screw Type e", "count": 0},
-        {"id": 16,"image": "Screws/s6", "name": "Screw Type f", "count": 0},
-        {"id": 17,"image": "Screws/s7", "name": "Screw Type g", "count": 0},
-        {"id": 18,"image": "Screws/s8", "name": "Screw Type h", "count": 0},
-        {"id": 19,"image": "Screws/s9", "name": "Screw Type i", "count": 0}
+        {"id": 11,"image": "Screws/s1", "quantity": "100 Pack", "name": "Screw Type a", "count": 0},
+        {"id": 12,"image": "Screws/s2", "quantity": "100 Pack","name": "Screw Type b", "count": 0},
+        {"id": 13,"image": "Screws/s3", "quantity": "100 Pack","name": "Screw Type c", "count": 0},
+        {"id": 14,"image": "Screws/s4", "quantity": "100 Pack","name": "Screw Type d", "count": 0},
+        {"id": 15,"image": "Screws/s5", "quantity": "100 Pack","name": "Screw Type e", "count": 0},
+        {"id": 16,"image": "Screws/s6", "quantity": "100 Pack","name": "Screw Type f", "count": 0},
+        {"id": 17,"image": "Screws/s7", "quantity": "100 Pack","name": "Screw Type g", "count": 0},
+        {"id": 18,"image": "Screws/s8", "quantity": "100 Pack","name": "Screw Type h", "count": 0},
+        {"id": 19,"image": "Screws/s9", "quantity": "100 Pack","name": "Screw Type i", "count": 0}
       ]
   }

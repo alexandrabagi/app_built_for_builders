@@ -1,13 +1,13 @@
 {
     "products": [
-        {"id": 21,"image": "Pipes/p1", "name": "Pipe Type a", "count": 0},
-        {"id": 22,"image": "Pipes/p2", "name": "Pipe Type b", "count": 0},
-        {"id": 23,"image": "Pipes/p3", "name": "Pipe Type c", "count": 0},
-        {"id": 34,"image": "Pipes/p4", "name": "Pipe Type d", "count": 0},
-        {"id": 25,"image": "Pipes/p5", "name": "Pipe Type e", "count": 0},
-        {"id": 26,"image": "Pipes/p6", "name": "Pipe Type f", "count": 0},
-        {"id": 27,"image": "Pipes/p7", "name": "Pipe Type g", "count": 0},
-        {"id": 28,"image": "Pipes/p8", "name": "Pipe Type h", "count": 0},
-        {"id": 29,"image": "Pipes/p9", "name": "Pipe Type i", "count": 0}
+        {"id": 21,"image": "Pipes/p1", "name": "Pipe Type a", "quantity": "10 Pack","count": 0},
+        {"id": 22,"image": "Pipes/p2", "name": "Pipe Type b", "quantity": "10 Pack","count": 0},
+        {"id": 23,"image": "Pipes/p3", "name": "Pipe Type c", "quantity": "10 Pack","count": 0},
+        {"id": 34,"image": "Pipes/p4", "name": "Pipe Type d", "quantity": "10 Pack","count": 0},
+        {"id": 25,"image": "Pipes/p5", "name": "Pipe Type e", "quantity": "10 Pack","count": 0},
+        {"id": 26,"image": "Pipes/p6", "name": "Pipe Type f", "quantity": "10 Pack","count": 0},
+        {"id": 27,"image": "Pipes/p7", "name": "Pipe Type g", "quantity": "10 Pack","count": 0},
+        {"id": 28,"image": "Pipes/p8", "name": "Pipe Type h", "quantity": "10 Pack","count": 0},
+        {"id": 29,"image": "Pipes/p9", "name": "Pipe Type i", "quantity": "10 Pack","count": 0}
       ]
   }
