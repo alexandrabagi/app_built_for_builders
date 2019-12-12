@@ -9,6 +9,7 @@ import TimeWheel from '../components/TimeWheel';
 import '../App.css';
 
 import Picker from 'react-mobile-picker';
+import { thisExpression } from '@babel/types';
 
 
 export default class HourRegistrationScreen extends React.Component {
@@ -120,8 +121,15 @@ export default class HourRegistrationScreen extends React.Component {
         ...valueGroups,
         [name]: value
       }
-    }));
-  };
+    }))
+  }
+
+  onChangeInput(evt) {
+    this.setState({
+      inputValue: evt.target.value,
+      inputLabel: 'Tap here to describe what you worked on.',
+    })
+  }
 
   clearAll() {
     this.setState({
@@ -143,9 +151,7 @@ export default class HourRegistrationScreen extends React.Component {
       showCalendarModal: false,
       coworker: 'Coworker',
       calendarDate: 'Other',
-      inputValue: '',
-      inputLabel: 'Tap here to describe what you worked on.',
-      
+      inputValue: ''
     })
   }
 
@@ -211,8 +217,10 @@ export default class HourRegistrationScreen extends React.Component {
 
         <div>
           <InputField
-            label={this.state.inputLabel} 
-            value={this.state.inputValue}/>
+            label={this.state.inputLabel}
+            value={this.state.inputValue}
+            onChange={this.onChangeInput.bind(this)}
+            />
         </div>
 
 
@@ -245,6 +253,7 @@ export default class HourRegistrationScreen extends React.Component {
       >Save</button>
 
       <SaveModal
+        className="modal"
         title='You successfully registered your working hours!'
         show={this.state.showSaveModal}
         onClose={this.closeSaveModal}

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import DropdownMenu from './Dropdown'
 
 class SaveModal extends React.Component {
-  
-  state = { 
+
+  state = {
   }
-  
+
   render() {
     // Render nothing if the "show" prop is false
-    if(!this.props.show) {
+    if (!this.props.show) {
       return null;
     }
 
@@ -21,28 +21,19 @@ class SaveModal extends React.Component {
       left: 0,
       right: 0,
       backgroundColor: 'rgba(0,0,0,0.3)',
-      padding: 50
-    };
-
-    // The modal "window"
-    const modalStyle = {
-      backgroundColor: 'white',
-      borderRadius: 10,
-      maxWidth: 700,
-      maxHeight: 800,
-      margin: '100 auto 0 auto',
+      padding: 50,
     };
 
     return (
       <div className="backdrop" style={backdropStyle}>
-        <div className="modal" style={modalStyle}>
+        <div className="modal-warning" >
           {this.props.children}
-          <div>{this.props.title}</div>
-           
-            <button 
-                className="hr-button-save"
-                onClick={() => { this.props.onClose() }}>
-                Close
+          <div style={{ paddingTop: '20px' }}>{this.props.title}</div>
+
+          <button
+            className="hr-button-save"
+            onClick={() => { this.props.onClose() }}>
+            Close
             </button>
         </div>
       </div>
