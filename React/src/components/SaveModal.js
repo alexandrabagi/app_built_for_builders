@@ -1,19 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DropdownMenu from './Dropdown'
 
-class SaveModal extends React.Component {
-
-  state = {
-  }
+export default class SaveModal extends React.Component {
 
   render() {
-    // Render nothing if the "show" prop is false
     if (!this.props.show) {
       return null;
     }
 
-    // The gray background
     const backdropStyle = {
       position: 'fixed',
       top: 0,
@@ -22,14 +16,13 @@ class SaveModal extends React.Component {
       right: 0,
       backgroundColor: 'rgba(0,0,0,0.3)',
       padding: 50,
-    };
+    }
 
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal-warning" >
           {this.props.children}
           <div style={{ paddingTop: '20px' }}>{this.props.title}</div>
-
           <button
             className="hr-button-save"
             onClick={() => { this.props.onClose() }}>
@@ -37,7 +30,7 @@ class SaveModal extends React.Component {
             </button>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -46,6 +39,4 @@ SaveModal.propTypes = {
   show: PropTypes.bool,
   children: PropTypes.node,
   onSelectCoworker: PropTypes.func,
-};
-
-export default SaveModal;
+}

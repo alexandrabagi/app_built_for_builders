@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 import { faClock, faTh, faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -29,4 +28,4 @@ export const TabbedBar = () => (
       </ul>
     </nav>
   </div>
-);
+)

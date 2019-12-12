@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../data/fetched'
 
 export default class OrderedScreen extends React.Component {
 
@@ -14,10 +13,7 @@ export default class OrderedScreen extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Entered checkToken")
     var validToken = false;
-    console.log("Datatoken: " + this.state.dataToken)
-    console.log("DataTokenDate: " + this.state.dataTokenDate)
     if (this.state.dataToken != null && this.state.dataTokenDate != null) {//Check if token is less than 12 min old (server have 15 min span)
       //https://www.w3resource.com/javascript-exercises/javascript-date-exercise-44.php
       var currentTime = new Date()
@@ -28,13 +24,8 @@ export default class OrderedScreen extends React.Component {
         validToken = true;
       }
     }
-    console.log("ValidToken: " + validToken)
     //If token is still valid than go directly to Order() method, otherwise use LogInAndOrder() method to first login and than order
-    if (validToken) {
-      //this.fetchData()
-    }
-    else {
-      console.log("Entered else statement")
+    if (!validToken) {
       this.login().then(() => this.fetchData())
     }
   }
@@ -49,9 +40,7 @@ export default class OrderedScreen extends React.Component {
         'Content-Type': 'application/json',
         'Authorization': 'Basic YWRtaW46MzMyMnFqMnM='
       },
-      //body: {}
     })
-      // The response translated to json
       .then((response) => {
         return response.json()})
       .then((responseJson) => {
@@ -74,7 +63,7 @@ export default class OrderedScreen extends React.Component {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + this.state.dataToken
         }
-      });
+      })
       const responseJson = await response.json();
       this.setState({
         isLoading: false,

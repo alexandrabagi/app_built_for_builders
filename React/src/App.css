@@ -42,6 +42,15 @@ body {
   background-color: #dfecfa;
 }
 
+div {
+  flex: 1;
+  justify-content: center;
+}
+
+img {
+  align-self: center;
+}
+
 /* iPad Pro resolution: 2732x2048*/
 .app {
   text-align: center;
@@ -76,13 +85,10 @@ body {
 
 }
 
-
 .app p {
   line-height: 1.5em;
   color: #222222;
 }
-
-/* for Product Screens */
 
 .blocks-container {
   overflow: scroll;
@@ -96,7 +102,7 @@ body {
   border-radius: 10px;
 }
 
-.blocks-container > * { /*image container*/
+.blocks-container > * { 
   display: block;
   width: 180px;
   height: 180px;
@@ -134,6 +140,51 @@ body {
   margin-right: auto;
 }
 
+.bottom-toolbar nav,
+.bottom-toolbar ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.bottom-toolbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.bottom-toolbar ul > * {
+  background-color: #084387;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #dfecfa;
+}
+
+.bottom-toolbar ul > * svg path {
+  fill: #dfecfa;
+}
+
+.bottom-toolbar ul > *.selected {
+  background-color: #dfecfa;
+  font-size: 20px;
+  color: #084387;
+}
+
+.bottom-toolbar ul > *.selected svg path {
+  fill: #084387;
+}
+
+.bottom-toolbar {
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .button-add-remove {
   background-color: white;
   border: none;
@@ -152,38 +203,12 @@ body {
   border-radius: 10px;
   font-weight: bold;
   height: 56px;
-
-}
-
-.label-count {
-  color: black;
-  padding: 8px;
-  font-family: Arial;
-  font-size: 40px;
-  background-color: white;
-}
-
-.product-card-frame {
-  display: inline-table;
-  background-color: white;
-  width: 350px;
-  border-style: solid;
-  border-width: thick;
-  border-color: #084387;
-  border-radius: 10px;
-  block-size: auto;  
-}
-.loading-show {
-  visibility: visible;
-}
-.loading-hidden {
-  visibility: hidden;
 }
 
 .buttons-show {
   visibility: visible;
-  
 }
+
 .buttons-hidden {
   visibility: hidden;
 }
@@ -231,101 +256,54 @@ body {
   font-weight: bold;
 }
 
-/* Toolbars */
-
-.bottom-toolbar {
-  height: 90px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.bottom-toolbar nav,
-.bottom-toolbar ul {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.bottom-toolbar ul {
+.field {
   display: flex;
-  list-style: none;
+  height: 300px;
+  border-radius: 10px;
+  margin: 20;
+  background-color: rgba(255,255,255,1);
 }
 
-.bottom-toolbar ul > * {
-  background-color: #084387;
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #dfecfa;
-}
-
-.bottom-toolbar ul > * svg path {
-  fill: #dfecfa;
-}
-
-.bottom-toolbar ul > *.selected {
-  background-color: #dfecfa;
-  font-size: 20px;
-  color: #084387;
-}
-
-.bottom-toolbar ul > *.selected svg path {
-  fill: #084387;
-}
-
-/*.tabbed-text-selected {
-  font-size: 24px;
-  color: #084387;
-}*/
-
-.tabbed-text-deselected {
-  font-size: 24px;
-  color: #dfecfa;
-}
-
-.top-appbar {
-  height: 90px;
-  position: top;
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-  display: flex;
-  align-items: center; 
-  justify-content: space-between;
-  background-color: #084387;
-  margin-left: 0px;
-}
-
-.top-appbar-title {
-  flex: 5;
-}
-
-.top-appbar-name {
-  flex: 1;
-  font-size: 28px;
-  font-weight: normal;
-  margin-right: 70px;
-  justify-content: flex-end;
-  
-}
-
-.top-appbar-back {
-  flex: 1;
-  font-size: 28px;
-  font-weight: normal;
-  background-color: #084387;
-  color: white;
+.field input {
+  width: 100%;
+  height: 100px;
+  padding: 0px 16px;
   border: none;
-  margin-left: 70px;
-  text-align: left;
+  border-radius: 10px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: normal;
+ 
+  color: #868686;
+  outline: none;
 }
 
-/* To select coworker/both button*/
+.field input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.img container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.label-count {
+  color: black;
+  padding: 8px;
+  font-family: Arial;
+  font-size: 40px;
+  background-color: white;
+}
+
+.loading-show {
+  visibility: visible;
+}
+
+.loading-hidden {
+  visibility: hidden;
+}
 
 .modal {
   font-size: 28px;
@@ -358,7 +336,6 @@ body {
   text-align: center;
 }
 
-
 .modal > .dropdown {
   margin: 20px;
   position: center;
@@ -382,53 +359,6 @@ body {
   transform: translate(-50%, -50%) !important;
 }
 
-.row {
-  display:flex; 
-  flex-direction:row;
-}
-
-.field {
-  display: flex;
-  height: 300px;
-  border-radius: 10px;
-  margin: 20;
-  background-color: rgba(255,255,255,1);
-}
-
-.field input {
-  width: 100%;
-  height: 100px;
-  padding: 0px 16px;
-  border: none;
-  border-radius: 10px;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: normal;
- 
-  color: #868686;
-  outline: none;
-}
-
-.field input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-img {
-  align-self: center;
-}
-
-.img container {
-  display: flex;
-  background-color: white;
-  border-radius: 10px;
-  justify-content: center;
-}
-
-div {
-  flex: 1;
-  justify-content: center;
-}
-
 .picker-item {
   font-size: 45px;
 }
@@ -438,7 +368,16 @@ div {
   font-weight: bold;
 }
 
-/* React calender formatting */
+.product-card-frame {
+  display: inline-table;
+  background-color: white;
+  width: 350px;
+  border-style: solid;
+  border-width: thick;
+  border-color: #084387;
+  border-radius: 10px;
+  block-size: auto;  
+}
 
 .react-calendar {
   border: white;
@@ -482,24 +421,17 @@ div {
   padding: 0px;
 }
 
-.toasts-container {
-  font-size: 28px;
-  background-position-y: center;
-  padding: 20px;
+.row {
+  display:flex; 
+  flex-direction:row;
 }
 
-.toast-success {
-  background-color: #FFFFFF !important;
-  color: crimson !important;
-}
-
-.toast-success-save {
-  color: rgb(32, 150, 95) !important;
-  font-size: 50px;
+.tabbed-text-deselected {
+  font-size: 24px;
+  color: #dfecfa;
 }
 
 .table {
-  
   align-content: center;
   justify-content: center;
   background-color: white;
@@ -515,6 +447,42 @@ div {
   margin: auto
 }
 
+.top-appbar {
+  height: 90px;
+  position: top;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  background-color: #084387;
+  margin-left: 0px;
+}
+
+.top-appbar-title {
+  flex: 5;
+}
+
+.top-appbar-name {
+  flex: 1;
+  font-size: 28px;
+  font-weight: normal;
+  margin-right: 70px;
+  justify-content: flex-end;
+  
+}
+
+.top-appbar-back {
+  flex: 1;
+  font-size: 28px;
+  font-weight: normal;
+  background-color: #084387;
+  color: white;
+  border: none;
+  margin-left: 70px;
+  text-align: left;
+}
 
 #ordered_items {
   text-align: center;
@@ -554,62 +522,4 @@ div {
     height: 31vw;
     margin-bottom: 3.5vw;
   }
-
 }
-
-/* TimeWheel*/
-.time-wheel-container {
-  overflow: hidden;
-  height: 200px;
-  align-items: center;
-  border-radius: 10px;
-  margin: 0%;
-
-
-}
-
-.time-wheel-container-inner {
-  overflow: inherit;
-  height: 180px;
-  align-items: center;
-  display:inline-block;
-  border-radius: 10px;
-
-}
-
-.column-time-wheel{
-  height: 5em;
-  overflow: auto;
-  height: 130px ;
-  list-style-type: none;
-  display:inline-block;
-  list-style-type: none;
-  padding-right: 40px;
-}
-
-.column-time-wheel::-webkit-scrollbar{
-  display: none; 
-
-}
-
-.time-wheel-number{
-  line-height: 2rem;
-    font-size: 30px;
-    color: #868686;
-
-}
-
-.mytxt{
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 10px;
-display: flex;
-padding-top: 7px;
-align-items: center;
-text-align: center;
-
-color: #868686;
-}
-
-

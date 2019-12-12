@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ImageThumbnail } from './ImageThumbnail';
 
 export const ImageGridScreen = props => (
@@ -15,8 +14,7 @@ export const ImageGridScreen = props => (
             OrderProductClick={() => props.OrderProductClick(item)} 
             showButtons={props.showButtons}
             count  ={props.count}
-            />;
-            
+            />
         })
       }
     </div>

@@ -1,12 +1,9 @@
 import React from 'react';
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SaveModal from '../components/SaveModal';
 
 
 export const ImageThumbnail = props => (
-
-  
   
   <div className='product-card-frame'>
     {/* 
@@ -39,5 +36,4 @@ export const ImageThumbnail = props => (
     <button className={props.showButtons ? 'button-order' : 'buttons-hidden'} onClick={props.OrderProductClick }> Order </button>
     
   </div>
-);
-
+)

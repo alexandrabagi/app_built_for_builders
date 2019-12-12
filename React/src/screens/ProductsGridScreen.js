@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ImageGridScreen } from '../components/ImageGridScreen';
 
 /* Contains specifc Material section e.g. all screws*/
@@ -161,7 +160,6 @@ class ProductGridScreen extends React.Component {
         console.log(responseJson.response);
         this.setState({
           isSaving: false,
-          //reset the item to order to null; 
           itemToOrder: null
         })
       })
@@ -169,8 +167,6 @@ class ProductGridScreen extends React.Component {
         console.log(error)
       });
   }
-
-
 
   render() {
     return (
@@ -186,7 +182,6 @@ class ProductGridScreen extends React.Component {
           OrderProductClick={this.OrderProduct}
           showButtons={true}
         />
-
       </div>
     );
   }

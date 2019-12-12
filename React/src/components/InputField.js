@@ -7,11 +7,10 @@ export default class InputField extends React.Component {
     value: PropTypes.string,
     label: PropTypes.string,
     onChange: PropTypes.func
-  };
+  }
 
   render() {
     const { id, label, value } = this.props;
-
     return (
       <div className="field input">
         <input
@@ -23,5 +22,5 @@ export default class InputField extends React.Component {
         />
       </div>
     )
-  };
-}; 
+  }
+} 

@@ -1,15 +1,11 @@
 import React from 'react';
-
 import InputField from '../components/InputField'
 import Button from './../components/Button'
 import Modal from '../components/Modal'
 import CalendarModal from '../components/CalendarModal';
 import SaveModal from '../components/SaveModal';
-import TimeWheel from '../components/TimeWheel';
 import '../App.css';
 import Picker from 'react-mobile-picker';
-import { thisExpression } from '@babel/types';
-
 
 export default class HourRegistrationScreen extends React.Component {
 
@@ -159,7 +155,7 @@ export default class HourRegistrationScreen extends React.Component {
       fontSize: '40px',
       color: 'rgba(8, 67, 135, 0.8)',
       padding: '10px'
-    };
+    }
 
     const { optionGroups, valueGroups } = this.state;
 
@@ -259,6 +255,5 @@ export default class HourRegistrationScreen extends React.Component {
       /> 
       </div>
     )
-  };
-};
-
+  }
+}
