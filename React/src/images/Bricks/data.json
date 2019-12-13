@@ -1,13 +1,13 @@
 {
     "products": [
-        {"id": 1, "image": "Bricks/b1", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b2", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b3", "name": "Regular", "count": 0},
-        {"id": 1,"image": "Bricks/b4", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b5", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b6", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b7", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b8", "name": "Regular", "count": 0},
-        {"id": 1, "image": "Bricks/b9", "name": "Regular", "count": 0}
+        {"id": 31, "image": "Bricks/b1", "name": "Brick Type 1", "quantity": "100 Pack","count": 0},
+        {"id": 32, "image": "Bricks/b2", "name": "Brick Type 2", "quantity": "100 Pack","count": 0},
+        {"id": 33, "image": "Bricks/b3", "name": "Brick Type 3", "quantity": "100 Pack","count": 0},
+        {"id": 34, "image": "Bricks/b4", "name": "Brick Type 4", "quantity": "100 Pack","count": 0},
+        {"id": 35, "image": "Bricks/b5", "name": "Brick Type 5", "quantity": "100 Pack","count": 0},
+        {"id": 36, "image": "Bricks/b6", "name": "Brick Type 6", "quantity": "100 Pack","count": 0},
+        {"id": 37, "image": "Bricks/b7", "name": "Brick Type 7", "quantity": "100 Pack","count": 0},
+        {"id": 38, "image": "Bricks/b8", "name": "Brick Type 8", "quantity": "100 Pack","count": 0},
+        {"id": 39, "image": "Bricks/b9", "name": "Brick Type 9", "quantity": "100 Pack","count": 0}
       ]
   }

@@ -1,7 +1,7 @@
 {
     "products": [
-        {"id": 1, "image": "Plastering/p1", "name": "Type a", "count": 0},
-        {"id": 1, "image": "Plastering/p2", "name": "Type b", "count": 0},
-        {"id": 1, "image": "Plastering/p3", "name": "Type c", "count": 0}     
+        {"id": 91, "image": "Plastering/p1", "name": "Plastering a", "quantity": "1000mm","count": 0},
+        {"id": 92, "image": "Plastering/p2", "name": "Plastering b", "quantity": "1500mm","count": 0},
+        {"id": 93, "image": "Plastering/p3", "name": "Plastering c", "quantity": "600mm","count": 0}     
       ]
   }

@@ -20,6 +20,10 @@
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 abbr {
   font-size: 20px;
   text-decoration: none;
@@ -38,6 +42,15 @@ body {
   background-color: #dfecfa;
 }
 
+div {
+  flex: 1;
+  justify-content: center;
+}
+
+img {
+  align-self: center;
+}
+
 /* iPad Pro resolution: 2732x2048*/
 .app {
   text-align: center;
@@ -46,6 +59,8 @@ body {
   max-height: 2732px;
   position: absolute;
   background-color: #dfecfa;
+  overflow: hidden;
+
 }
 
 .app h1 {
@@ -56,14 +71,19 @@ body {
 }
 
 .app h3 {
-  background-color: #084387;
-  color: #FFFFFF;
+  background-color: white;
+  height: 2em;
+  line-height: 1em;
+  overflow: hidden;
+  color: black;
   font-size: 20px;
-  padding: 10px;
-  width: 200px;
+  width: auto;  
   text-align: center;
-}
+  font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
+}
 
 .app p {
   line-height: 1.5em;
@@ -71,18 +91,18 @@ body {
 }
 
 .blocks-container {
+  overflow: scroll;
   display: flex;
-  height: max-content;
+  height: 78%;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
   background-color: white;
   margin: 30px 60px 0px 60px;
   border-radius: 10px;
-  overflow: scroll;
 }
 
-.blocks-container > * { /*image container*/
+.blocks-container > * { 
   display: block;
   width: 180px;
   height: 180px;
@@ -90,6 +110,7 @@ body {
   opacity: 0;
   position: relative;
   transition: transform 0.5s;
+
 }
 
 .blocks-container > *.selected {
@@ -111,84 +132,12 @@ body {
   animation-fill-mode: forwards;
   object-fit: cover;
   padding: 20px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   
 }
 .blocks-container table {
   margin-left: auto;
   margin-right: auto;
-}
-
-.button-add-remove {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.label-count {
-  color: white;
-  padding: 8px;
-  font-family: Arial;
-  font-size: 35px;
-  background-color: rgb(230, 78, 18);
-}
-
-.buttons-show {
-  visibility: visible;
-}
-.buttons-hidden {
-  visibility: hidden;
-}
-
-.content-area {
-  padding: 40px;
-  text-align: center;
-}
-
-.hr-button {
-  width: 100%;
-  height: 56px;
-  background: white;
-  color: #898989;
-  border: none;
-  border-radius: 10px;
-  font-size: 28px;
-  font-weight: normal;
-  margin: 20px;
-}
-
-.hr-button-selected {
-  width: 100%;
-  height: 56px;
-  background-color: white;
-  color: #084387;
-  margin: 20px;
-  border-radius: 10px;
-  font-size: 28px;
-  font-weight: bold;
-  border: 4px solid #084387;
-}
-
-.hr-button-save {
-  height: 56px;
-  background-color: #084387;
-  color: white;
-  margin: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-radius: 10px;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.bottom-toolbar {
-  height: 90px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .bottom-toolbar nav,
@@ -210,6 +159,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 20px;
+  color: #dfecfa;
 }
 
 .bottom-toolbar ul > * svg path {
@@ -218,24 +169,140 @@ body {
 
 .bottom-toolbar ul > *.selected {
   background-color: #dfecfa;
+  font-size: 20px;
+  color: #084387;
 }
 
 .bottom-toolbar ul > *.selected svg path {
   fill: #084387;
 }
 
-.top-appbar {
+.bottom-toolbar {
   height: 90px;
-  position: top;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-  display: flex;
-  align-items: center;
+}
+
+.button-add-remove {
+  background-color: white;
+  border: none;
+  color: red;
+  padding: 12px 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.button-order {
   background-color: #084387;
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 28px;
+  border-radius: 10px;
+  font-weight: bold;
+  height: 56px;
+}
+
+.buttons-show {
+  visibility: visible;
+}
+
+.buttons-hidden {
+  visibility: hidden;
+}
+
+.content-area {
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-left: 40px;
+  text-align: center;
+}
+
+.hr-button {
+  width: 100%;
+  height: 56px;
+  background: white;
+  color: #898989;
+  border: none;
+  border-radius: 10px;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 20px;
+}
+
+.hr-button-selected {
+  width: 100%;
+  height: 56px;
+  background-color: white;
+  color: #084387;
+  margin: 20px;
+  border-radius: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  border: 4px solid #084387;
+}
+
+.hr-button-save {
+  height: 56px;
+  background-color: #084387;
+  color: white;
+  margin: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.field {
+  display: flex;
+  height: 300px;
+  border-radius: 10px;
+  margin: 20;
+  background-color: rgba(255,255,255,1);
+}
+
+.field input {
+  width: 100%;
+  height: 100px;
+  padding: 0px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: normal;
+ 
+  color: #868686;
+  outline: none;
+}
+
+.field input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.img container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.label-count {
+  color: black;
+  padding: 8px;
+  font-family: Arial;
+  font-size: 40px;
+  background-color: white;
+}
+
+.loading-show {
+  visibility: visible;
+}
+
+.loading-hidden {
+  visibility: hidden;
 }
 
 .modal {
@@ -269,7 +336,6 @@ body {
   text-align: center;
 }
 
-
 .modal > .dropdown {
   margin: 20px;
   position: center;
@@ -279,52 +345,38 @@ body {
   padding: 10px;
 }
 
-.row {
-  display:flex; 
-  flex-direction:row;
-}
-
-.field {
-  display: flex;
-  height: 300px;
-  border-radius: 10px;
-  margin: 20;
-  background-color: rgba(255,255,255,1);
-}
-
-.field input {
-  width: 100%;
-  height: 100px;
-  padding: 0px 16px;
-  border: none;
-  border-radius: 10px;
+.modal-warning {
+  padding: 20px;
   font-size: 28px;
-  font-weight: 400;
-  line-height: normal;
- 
-  color: #868686;
-  outline: none;
-}
-
-.field input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-img {
-  align-self: center;
-}
-
-.img container {
-  display: flex;
-  margin: 20;
+  max-height: 800px !important;
+  width: 300px;
   background-color: white;
   border-radius: 10px;
-  justify-content: center;
+  align-self: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
 }
 
-div {
-  flex: 1;
-  justify-content: center;
+.picker-item {
+  font-size: 45px;
+}
+
+.picker-item-selected {
+  color: #084387 !important;
+  font-weight: bold;
+}
+
+.product-card-frame {
+  display: inline-table;
+  background-color: white;
+  width: 350px;
+  border-style: solid;
+  border-width: thick;
+  border-color: #084387;
+  border-radius: 10px;
+  block-size: auto;  
 }
 
 .react-calendar {
@@ -369,6 +421,89 @@ div {
   padding: 0px;
 }
 
+.row {
+  display:flex; 
+  flex-direction:row;
+}
+
+.tabbed-text-deselected {
+  font-size: 24px;
+  color: #dfecfa;
+}
+
+.table {
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.tbody {  
+  display: block;
+  height: 100px;
+  align-content: center;
+  background-color: white;
+  width: 100%;
+  overflow: scroll;
+  margin: auto
+}
+
+.top-appbar {
+  height: 90px;
+  position: top;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  background-color: #084387;
+  margin-left: 0px;
+}
+
+.top-appbar-title {
+  flex: 5;
+}
+
+.top-appbar-name {
+  flex: 1;
+  font-size: 28px;
+  font-weight: normal;
+  margin-right: 70px;
+  justify-content: flex-end;
+  
+}
+
+.top-appbar-back {
+  flex: 1;
+  font-size: 28px;
+  font-weight: normal;
+  background-color: #084387;
+  color: white;
+  border: none;
+  margin-left: 70px;
+  text-align: left;
+}
+
+#ordered_items {
+  text-align: center;
+  font-size: 28px;
+  overflow: scroll;
+}
+
+#table_header {
+  padding: 20px;
+  overflow: hidden;
+}
+
+#table_holder {
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+}
 
 @media screen and (max-width: 576px) {
 

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ImageGridScreen } from '../components/ImageGridScreen';
 
 export const MaterialGridScreen = props => (

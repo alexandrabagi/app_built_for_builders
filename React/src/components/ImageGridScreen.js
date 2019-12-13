@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ImageThumbnail } from './ImageThumbnail';
 
 export const ImageGridScreen = props => (
@@ -12,10 +11,10 @@ export const ImageGridScreen = props => (
             onClick={() => props.toggleImageSelect(item.id)} 
             IncrementCountClick={() => props.IncrementCountClick(item)} 
             DecreaseCountClick={() => props.DecreaseCountClick(item)} 
+            OrderProductClick={() => props.OrderProductClick(item)} 
             showButtons={props.showButtons}
             count  ={props.count}
-            />;
-            
+            />
         })
       }
     </div>

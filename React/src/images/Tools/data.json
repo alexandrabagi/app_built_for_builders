@@ -1,8 +1,8 @@
 {
     "products": [
-        {"id": 1,"image": "Tools/t1", "name": "type a", "count": 0},
-        {"id": 1,"image": "Tools/t1", "name": "type b", "count": 0},
-        {"id": 1,"image": "Tools/t1", "name": "type c", "count": 0}
+        {"id": 71,"image": "Tools/t1", "name": "Tool Type a", "quantity": "10 Pack", "count": 0},
+        {"id": 72,"image": "Tools/t1", "name": "Tool Type b", "quantity": "10 Pack","count": 0},
+        {"id": 73,"image": "Tools/t1", "name": "Tool Type c", "quantity": "10 Pack","count": 0}
         
 
       ]
